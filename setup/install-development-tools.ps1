@@ -13,8 +13,7 @@ catch [Exception] {
 }
 
 # 必要なもんゴッソリ
-mkdir C:\TEMP
-(New-Object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/packages_common.config","C:\TEMP\packages.config")
+wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/packages_common.config" -OutFile "C:\TEMP\packages.config"
 cinst C:\TEMP\packages.config
 cup all -y
 
