@@ -13,7 +13,7 @@ catch [Exception] {
 }
 
 # 必要なもんゴッソリ
-mkdir C:\TEMP
+New-Item C:\TEMP -ItemType Directory
 wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/packages_common.config" -OutFile "C:\TEMP\packages.config"
 cinst C:\TEMP\packages.config
 cup all -y
