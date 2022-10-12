@@ -14,7 +14,7 @@ catch [Exception] {
 
 # 必要なもんゴッソリ
 wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/packages_common.config" -OutFile "C:\TEMP\packages.config"
-cinst C:\TEMP\packages.config -y
+cinst -y C:\TEMP\packages.config
 cup all -y
 
 Write-Host ""
