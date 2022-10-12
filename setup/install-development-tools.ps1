@@ -2,17 +2,17 @@ Write-Host "Install Development Tools"
 Write-Host "=============================="
 
 try {
-  # chocoã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ç¢ºèª
+  # choco‚ÌƒCƒ“ƒXƒg[ƒ‹Šm”F
   get-command choco -ErrorAction Stop
 }
 catch [Exception] {
-  # chocoã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+  # choco‚ÌƒCƒ“ƒXƒg[ƒ‹
   Write-Host "Install choco"
   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
   choco upgrade chocolatey
 }
 
-# å¿…è¦ãªã‚‚ã‚“ã‚´ãƒƒã‚½ãƒª
+# •K—v‚È‚à‚ñƒSƒbƒ\ƒŠ
 cinst packages_common.config
 cup all -y
 
@@ -20,6 +20,6 @@ Write-Host ""
 Write-Host "... Install is complete"
 Write-Host ""
 
-# å‡¦ç†å®Œäº†å¾Œã€ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒœãƒƒã‚¯ã‚¹ã‚’è¡¨ç¤º
+# ˆ—Š®—¹ŒãAƒƒbƒZ[ƒWƒ{ƒbƒNƒX‚ğ•\¦
 $wsobj = new-object -comobject wscript.shell
-$result = $wsobj.popup("ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—ãŒå®Œäº†ã—ã¾ã—ãŸã€‚PCã‚’å†èµ·å‹•ã—ã¦ãã ã•ã„ã€‚")
+$result = $wsobj.popup("ƒZƒbƒgƒAƒbƒv‚ªŠ®—¹‚µ‚Ü‚µ‚½BPC‚ğÄ‹N“®‚µ‚Ä‚­‚¾‚³‚¢B")

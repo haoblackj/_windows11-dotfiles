@@ -1,7 +1,7 @@
 Write-Host "Windows Settings"
 Write-Host "=============================="
 
-Write-Host "WSL 繧､繝ｳ繧ｹ繝医�ｼ繝ｫ"
+Write-Host "WSL インストール"
 wsl --install
 
 Write-Host ""
