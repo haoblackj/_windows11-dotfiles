@@ -13,7 +13,7 @@ catch [Exception] {
 }
 
 # 必要なもんゴッソリ
-cinst packages_common.config
+cinst https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/packages_common.config
 cup all -y
 
 Write-Host ""
