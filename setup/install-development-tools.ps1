@@ -13,9 +13,11 @@ catch [Exception] {
 }
 
 # 必要なもんゴッソリ
-wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/packages_common.config" -OutFile "C:\TEMP\packages.config"
-cinst -y C:\TEMP\packages.config
+wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/packages_common.config" -OutFile "packages.config"
+cinst -y packages.config
 cup all -y
+
+del packages.config
 
 Write-Host ""
 Write-Host "... Install is complete"
