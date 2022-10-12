@@ -10,6 +10,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 ## WSL編
 1. WSL上で実行。
 ```
-gh repo clone https://github.com/haoblackj/dotfiles.git
+git clone https://github.com/haoblackj/dotfiles.git
 dotfiles/install.sh
 ```
