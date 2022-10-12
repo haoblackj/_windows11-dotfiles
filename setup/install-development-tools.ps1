@@ -17,7 +17,7 @@ wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/set
 cinst -y packages.config
 cup all -y
 
-del packages.config
+del /q packages.config
 
 Write-Host ""
 Write-Host "... Install is complete"
