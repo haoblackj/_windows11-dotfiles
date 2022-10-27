@@ -17,22 +17,22 @@ wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/set
 cinst -y packages.config
 cup all -y
 
-del /q packages.config
+del /q "packages.config"
 
 wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/install_vscode_extensions.ps1" -OutFile "install_vscode_extensions.ps1"
 wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/vscode-extensions_list.txt" -OutFile "vscode-extensions_list.txt"
 
 powershell -ExecutionPolicy RemoteSigned -File ".\install_vscode_extensions.ps1" "vscode-extensions_list.txt"
 
-del /q install_vscode_extensions.ps1
-del /q vscode-extensions_list.txt
+del /q "install_vscode_extensions.ps1"
+del /q "vscode-extensions_list.txt"
 
 wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/Microsoft.PowerShell_profile.ps1" -OutFile "Microsoft.PowerShell_profile.ps1"
 
 $MyDocumentsDir = [System.Environment]::GetFolderPath("MyDocuments")
 copy-item "Microsoft.PowerShell_profile.ps1" "$MyDocumentsDir\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
 
-del /q Microsoft.PowerShell_profile.ps1
+del /q "Microsoft.PowerShell_profile.ps1"
 
 Write-Host ""
 Write-Host "... Install is complete"
