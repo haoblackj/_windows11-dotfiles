@@ -1,5 +1,6 @@
 Write-Host "Windows Settings"
 Write-Host "=============================="
+Write-Host "WSLインストールセクション"
 
 #選択肢の作成
 $typename = "System.Management.Automation.Host.ChoiceDescription"
