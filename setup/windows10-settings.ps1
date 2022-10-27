@@ -21,6 +21,8 @@ $answer = $host.ui.PromptForChoice("<実行確認>","実行しますか？",$choice,0)
 if($answer -eq 0){
   Write-Host "WSL インストール"
   wsl --install
+  Write-Host "Windowsハイパーバイザー インストール"
+  dism.exe /online /enable-feature /featurename:HypervisorPlatform /all /norestart
 }Else{
   Write-Host "WSL インストールしない"
 }
