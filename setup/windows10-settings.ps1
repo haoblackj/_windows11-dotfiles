@@ -1,4 +1,6 @@
 Write-Host "Windows Settings"
+Write-Host "PowerShellの実行ポリシー変更"
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 Write-Host "=============================="
 Write-Host "WSLインストールセクション"
 
