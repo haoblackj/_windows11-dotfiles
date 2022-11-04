@@ -17,6 +17,28 @@ wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/set
 cinst -y packages.config
 cup all -y
 
+#選択肢の作成
+$typename = "System.Management.Automation.Host.ChoiceDescription"
+$yes = new-object $typename("&Yes","実行する")
+$no  = new-object $typename("&No","実行しない")
+
+#選択肢コレクションの作成
+$assembly= $yes.getType().AssemblyQualifiedName
+$choice = new-object "System.Collections.ObjectModel.Collection``1[[$assembly]]"
+$choice.add($yes)
+$choice.add($no)
+
+#選択プロンプトの表示
+$answer = $host.ui.PromptForChoice("<実行確認>","Officeインストール実行しますか？",$choice,0)
+
+if($answer -eq 0){
+  Write-Host "Office インストール"
+  choco install office365business --params "'/productid:O365BusinessRetail /exclude:Access Groove Lync OneNote Publisher /language:ja-JP /eula:TRUE'"
+  Start-Sleep -Second 5
+}Else{
+  Write-Host "Office インストールしない"
+}
+
 remove-item "packages.config" -Force
 
 $env:ChocolateyInstall = Convert-Path "$((Get-Command choco).path)\..\.."

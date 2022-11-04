@@ -16,7 +16,7 @@ $choice.add($yes)
 $choice.add($no)
 
 #選択プロンプトの表示
-$answer = $host.ui.PromptForChoice("<実行確認>","実行しますか？",$choice,0)
+$answer = $host.ui.PromptForChoice("<実行確認>","WSLインストール実行しますか？",$choice,0)
 
 if($answer -eq 0){
   Write-Host "WSL インストール"
