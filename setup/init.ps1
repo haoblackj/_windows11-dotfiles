@@ -5,22 +5,22 @@ reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\
 reg.exe add "HKCU\Software\Classes\CLSID\{d93ed569-3b3e-4bff-8355-3c44f6a52bb5}\InprocServer32" /f /ve
 winget install -e --id Google.JapaneseIME
 while ($true) {
-    $home = Read-Host -Prompt 'è‡ªå®…ç«¯æœ«ã§ã™ã‹ï¼Ÿ (Yes/No)'
+    $home = Read-Host -Prompt '©‘î’[––‚Å‚·‚©H (Yes/No)'
 
     if ($home -ieq 'Yes') {
-        Write-Host 'è‡ªå®…ã®è¨­å®šã‚’å®Ÿè¡Œã—ã¾ã™ã€‚'
+        Write-Host '©‘î‚Ìİ’è‚ğÀs‚µ‚Ü‚·B'
         winget install -e --id Google.Drive
         winget install -e --id LINE.LINE
         winget install -e --id Amazon.Kindle
         break
     }
     elseif ($home -ieq 'No') {
-        Write-Host 'è‡ªå®…ä»¥å¤–ã®è¨­å®šã‚’å®Ÿè¡Œã—ã¾ã™ã€‚'
-        # ã“ã“ã«è‡ªå®…ä»¥å¤–ã®ç«¯æœ«ç”¨ã®è¨­å®šã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å…¥ã‚Œã¦ãã ã•ã„ã€‚
+        Write-Host '©‘îˆÈŠO‚Ìİ’è‚ğÀs‚µ‚Ü‚·B'
+        # ‚±‚±‚É©‘îˆÈŠO‚Ì’[––—p‚Ìİ’èƒXƒNƒŠƒvƒg‚ğ“ü‚ê‚Ä‚­‚¾‚³‚¢B
         break
     }
     else {
-        Write-Host 'ç„¡åŠ¹ãªå…¥åŠ›ã§ã™ã€‚Yesã‹Noã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚'
+        Write-Host '–³Œø‚È“ü—Í‚Å‚·BYes‚©No‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B'
     }
 }
 
