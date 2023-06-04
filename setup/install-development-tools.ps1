@@ -14,8 +14,8 @@ catch [Exception] {
 
 # 必要なもんゴッソリ
 wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/packages_common.config" -OutFile "packages.config"
-cinst -y packages.config
-cup all -y
+choco install -y packages.config
+choco upgrade all -y
 
 remove-item "packages.config" -Force
 
