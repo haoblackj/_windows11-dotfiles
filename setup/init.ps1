@@ -7,16 +7,14 @@ winget install -e --id Google.JapaneseIME
 while ($true) {
     $home = Read-Host -Prompt '自宅端末ですか？ (Yes/No)'
 
-    if ($home -eq 'Yes') {
-        # 設定①
+    if ($home -ieq 'Yes') {
         Write-Host '自宅の設定を実行します。'
         winget install -e --id Google.Drive
         winget install -e --id LINE.LINE
         winget install -e --id Amazon.Kindle
         break
     }
-    elseif ($home -eq 'No') {
-        # 設定②
+    elseif ($home -ieq 'No') {
         Write-Host '自宅以外の設定を実行します。'
         # ここに自宅以外の端末用の設定スクリプトを入れてください。
         break
