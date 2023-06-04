@@ -9,6 +9,7 @@ while ($true) {
 
     if ($home -ieq 'Yes') {
         Write-Host "©‘î‚Ìİ’è‚ğÀs‚µ‚Ü‚·B"
+        Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
         winget install -e --id Google.Drive
         winget install -e --id LINE.LINE
         winget install -e --id Amazon.Kindle
