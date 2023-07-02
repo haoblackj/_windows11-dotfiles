@@ -3,21 +3,12 @@
 ###########
 
 # 1. PowerToysを起動する
-# 2. FancyZonesのレイアウトエディタを起動する
-# 3. レイアウトを作成
-# 4. Shiftを押しながらレイアウトしたいアプリを移動する
+# 2. OneDriveから設定ファイルを読み込む
 
 ############
 # AutoHotKey
 ############
 
-# インストール： https://www.autohotkey.com/
 # 1. Win + R > shell:startup
 # 2. スタートアップフォルダに ./key-config.ahk をコピー
 
-########
-# Pragli
-########
-
-# インストール： https://pragli.com/blog/desktop-client-downloads/
-# 1. Pragliを起動しログインする。
