@@ -13,6 +13,9 @@ while ($true) {
         winget install -e --id Google.Drive
         winget install -e --id LINE.LINE
         winget install -e --id Amazon.Kindle
+        winget install -e --id OBSProject.OBSStudio
+        winget install -e --id Anki.Anki
+        winget install -e --id Mozilla.Firefox
         break
     }
     elseif ($home_terminal -ieq 'No') {
