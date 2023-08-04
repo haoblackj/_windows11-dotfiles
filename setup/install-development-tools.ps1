@@ -14,8 +14,7 @@ catch [Exception] {
 
 # 必要なもんゴッソリ
 wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/packages_common.config" -OutFile "packages.config"
-choco install -y packages.config
-choco upgrade all -y
+choco install -y packages.config --ignore-checksums
 
 remove-item "packages.config" -Force
 
@@ -31,17 +30,7 @@ powershell -ExecutionPolicy RemoteSigned -File ".\install_vscode_extensions.ps1"
 remove-item "install_vscode_extensions.ps1" -Force
 remove-item "vscode-extensions_list.txt" -Force
 
-wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/Microsoft.PowerShell_profile.ps1" -OutFile "Microsoft.PowerShell_profile.ps1"
-
-$MyDocumentsDir = [System.Environment]::GetFolderPath("MyDocuments")
-copy-item "Microsoft.PowerShell_profile.ps1" "$MyDocumentsDir\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
-
-remove-item "Microsoft.PowerShell_profile.ps1" -Force
-
 Write-Host ""
 Write-Host "... Install is complete"
 Write-Host ""
 
-# 処理完了後、メッセージボックスを表示
-$wsobj = new-object -comobject wscript.shell
-$result = $wsobj.popup("セットアップが完了しました。PCを再起動してください。")
