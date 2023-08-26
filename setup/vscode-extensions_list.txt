@@ -9,3 +9,7 @@ ms-vscode-remote.remote-ssh-edit
 ms-vscode-remote.remote-wsl
 PKief.material-icon-theme
 sgryjp.japanese-word-handler
+github.copilot
+github.copilot-labs
+github.copilot-chat
+knisterpeter.vscode-commitizen
