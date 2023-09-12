@@ -13,6 +13,9 @@ while ($true) {
         winget install -e --id OBSProject.OBSStudio
         winget install -e --id Anki.Anki
         winget install -e --id Mozilla.Firefox
+        winget install -e --id Google.JapaneseIME
+        winget install -e --id valinet.ExplorerPatcher
+        winget install -e --id Microsoft.Office
         break
     }
     elseif ($home_terminal -ieq 'No') {
