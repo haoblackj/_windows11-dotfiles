@@ -2,6 +2,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/install-development-tools.ps1'))
 Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
 # winget install -e --id Google.JapaneseIME
+winget settings --enable InstallerHashOverride
 winget install -e --id Google.JapaneseIME --ignore-security-hash
 winget install -e --id valinet.ExplorerPatcher --ignore-security-hash
 winget install -e --id Microsoft.Office --ignore-security-hash
