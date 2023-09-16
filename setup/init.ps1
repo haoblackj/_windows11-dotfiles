@@ -6,6 +6,7 @@ winget settings --enable InstallerHashOverride
 winget install -e --id Google.JapaneseIME --ignore-security-hash
 winget install -e --id valinet.ExplorerPatcher --ignore-security-hash
 winget install -e --id Microsoft.Office --ignore-security-hash
+winget install -e --id Microsoft.WindowsADK --ignore-security-hash
 while ($true) {
     $home_terminal = Read-Host -Prompt "é©ëÓí[ññÇ≈Ç∑Ç©ÅH (Yes/No)"
 
