@@ -1,6 +1,9 @@
 Write-Host "Windows Settings"
 Write-Host "PowerShellの実行ポリシー変更"
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+#.gitconfigの配置
+Write-Host "gitconfigのダウンロードとユーザプロファイルへの配置"
+wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.gitconfig" -OutFile "$env:USERPROFILE\.gitconfig"
 Write-Host "=============================="
 Write-Host "WSLインストールセクション"
 
