@@ -13,6 +13,8 @@ while ($true) {
     if ($home_terminal -ieq 'Yes') {
         Write-Host "é©ëÓÇÃê›íËÇé¿çsÇµÇ‹Ç∑ÅB"
         winget install -e --id LINE.LINE --ignore-security-hash
+        winget install -e --id AdGuard.AdGuard --ignore-security-hash
+        winget install -e --id Cloudflare.Warp --ignore-security-hash
         winget install -e --id Amazon.Kindle --ignore-security-hash
         winget install -e --id OBSProject.OBSStudio --ignore-security-hash
         winget install -e --id Anki.Anki --ignore-security-hash
