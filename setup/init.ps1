@@ -7,12 +7,12 @@ winget install -e --id Google.JapaneseIME --ignore-security-hash
 winget install -e --id valinet.ExplorerPatcher --ignore-security-hash
 winget install -e --id Microsoft.Office --ignore-security-hash
 winget install -e --id Microsoft.WindowsADK --ignore-security-hash
+winget install -e --id AutoHotkey.AutoHotkey --ignore-security-hash
 while ($true) {
     $home_terminal = Read-Host -Prompt "自宅端末ですか？ (Yes/No)"
 
     if ($home_terminal -ieq 'Yes') {
         Write-Host "自宅の設定を実行します。"
-        winget install -e --id LINE.LINE --ignore-security-hash
         winget install -e --id AdGuard.AdGuard --ignore-security-hash
         winget install -e --id Cloudflare.Warp --ignore-security-hash
         winget install -e --id Amazon.Kindle --ignore-security-hash
