@@ -1,0 +1,8 @@
+[credential]
+	helper = manager
+[user]
+    name = haoblackj
+    email = 17177994+haoblackj@users.noreply.github.com
+[core]
+    autocrlf = false
+    quotepath = false
