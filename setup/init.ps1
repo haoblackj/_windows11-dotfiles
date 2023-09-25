@@ -4,6 +4,12 @@ Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller
 # winget install -e --id Google.JapaneseIME
 winget settings --enable InstallerHashOverride
 winget install -e --id Google.JapaneseIME --ignore-security-hash
+winget install -e --id Google.Chrome --ignore-security-hash
+winget install -e --id Bitwarden.Bitwarden --ignore-security-hash
+winget install -e --id voidtools.Everything --ignore-security-hash
+winget install -e --id stnkl.EverythingToolbar --ignore-security-hash
+winget install -e --id Bandisoft.Honeyview --ignore-security-hash
+winget install -e --id SumatraPDF.SumatraPDF --ignore-security-hash
 winget install -e --id valinet.ExplorerPatcher --ignore-security-hash
 winget install -e --id Microsoft.Office --ignore-security-hash
 winget install -e --id Microsoft.WindowsADK --ignore-security-hash
@@ -14,11 +20,15 @@ while ($true) {
     if ($home_terminal -ieq 'Yes') {
         Write-Host "é©ëÓÇÃê›íËÇé¿çsÇµÇ‹Ç∑ÅB"
         winget install -e --id AdGuard.AdGuard --ignore-security-hash
-        winget install -e --id Cloudflare.Warp --ignore-security-hash
+        winget install -e --id File-New-Project.EarTrumpet --ignore-security-hash
+        winget install -e --id CubeSoft.CubePDF --ignore-security-hash
         winget install -e --id Amazon.Kindle --ignore-security-hash
         winget install -e --id OBSProject.OBSStudio --ignore-security-hash
         winget install -e --id Anki.Anki --ignore-security-hash
         winget install -e --id Mozilla.Firefox --ignore-security-hash
+        winget install -e --id DigitalScholar.Zotero --ignore-security-hash
+        winget install -e --id Synology.ActiveBackupForBusinessAgent --ignore-security-hash
+        winget install -e --id ogdesign.Eagle --ignore-security-hash
         break
     }
     elseif ($home_terminal -ieq 'No') {
