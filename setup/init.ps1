@@ -7,6 +7,8 @@ rm winget.msixbundle
 # Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
 # winget install -e --id Google.JapaneseIME
 # winget upgrade --id Microsoft.Winget.Source
+Get-AppxPackage -Name MicrosoftTeams | Remove-AppxPackage -AllUsers
+Get-AppxProvisionedPackage -Online | Where DisplayName -eq "MicrosoftTeams" | Remove-AppxProvisionedPackage -Online
 winget settings --enable InstallerHashOverride
 winget install -e --id Google.JapaneseIME --ignore-security-hash
 winget install -e --id Google.Chrome --ignore-security-hash
