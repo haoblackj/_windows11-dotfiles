@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: '10.0.22000'
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: GeForceExperience
+      directives:
+        description: Install GeForce Experience
+        allowPrerelease: true
+      settings:
+        id: NVIDIA.GeForceExperience
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: LinkShellExtension
+      directives:
+        description: Install Link Shell Extension
+        allowPrerelease: true
+      settings:
+        id: HermannSchinagl.LinkShellExtension
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: EarTrumpet
+      directives:
+        description: Install EarTrumpet
+        allowPrerelease: true
+      settings:
+        id: File-New-Project.EarTrumpet
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: ActiveBackupForBusinessAgent
+      directives:
+        description: Install Active Backup for Business Agent
+        allowPrerelease: true
+      settings:
+        id: Synology.ActiveBackupForBusinessAgent
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Eagle
+      directives:
+        description: Install Eagle
+        allowPrerelease: true
+      settings:
+        id: ogdesign.Eagle
+        source: winget
+  configurationVersion: 0.2.0

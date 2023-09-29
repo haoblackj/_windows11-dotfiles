@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: '10.0.22000'
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: GoogleJapaneseIME
+      directives:
+        description: Install Google Japanese IME
+        allowPrerelease: true
+      settings:
+        id: Google.JapaneseIME
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: GoogleChrome
+      directives:
+        description: Install Google Chrome
+        allowPrerelease: true
+      settings:
+        id: Google.Chrome
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Bitwarden
+      directives:
+        description: Install Bitwarden
+        allowPrerelease: true
+      settings:
+        id: Bitwarden.Bitwarden
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: SumatraPDF
+      directives:
+        description: Install SumatraPDF
+        allowPrerelease: true
+      settings:
+        id: SumatraPDF.SumatraPDF
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: ExplorerPatcher
+      directives:
+        description: Install ExplorerPatcher
+        allowPrerelease: true
+      settings:
+        id: valinet.ExplorerPatcher
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: WindowsADK
+      directives:
+        description: Install Windows ADK
+        allowPrerelease: true
+      settings:
+        id: Microsoft.WindowsADK
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: AutoHotkey
+      directives:
+        description: Install AutoHotkey
+        allowPrerelease: true
+      settings:
+        id: AutoHotkey.AutoHotkey
+        source: winget
+  configurationVersion: 0.2.0

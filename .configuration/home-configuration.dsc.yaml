@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: '10.0.22000'
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: AdGuard
+      directives:
+        description: Install AdGuard
+        allowPrerelease: true
+      settings:
+        id: AdGuard.AdGuard
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: CubePDF
+      directives:
+        description: Install CubePDF
+        allowPrerelease: true
+      settings:
+        id: CubeSoft.CubePDF
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Kindle
+      directives:
+        description: Install Kindle
+        allowPrerelease: true
+      settings:
+        id: Amazon.Kindle
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Firefox
+      directives:
+        description: Install Firefox
+        allowPrerelease: true
+      settings:
+        id: Mozilla.Firefox
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Zotero
+      directives:
+        description: Install Zotero
+        allowPrerelease: true
+      settings:
+        id: Zotero.Zotero
+        source: winget
+  configurationVersion: 0.2.0
