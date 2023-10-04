@@ -64,4 +64,12 @@ properties:
       settings:
         id: AutoHotkey.AutoHotkey
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: VSCode
+      directives:
+        description: Install VSCode
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VisualStudioCode
+        source: winget
   configurationVersion: 0.2.0
