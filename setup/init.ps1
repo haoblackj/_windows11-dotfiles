@@ -10,6 +10,7 @@ rm winget.msixbundle
 # winget upgrade --id Microsoft.Winget.Source
 Get-AppxPackage -Name MicrosoftTeams | Remove-AppxPackage -AllUsers
 Get-AppxProvisionedPackage -Online | Where DisplayName -eq "MicrosoftTeams" | Remove-AppxProvisionedPackage -Online
+New-Item -Path $env:USERPROFILE\.configuration -ItemType Directory
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\configuration.dsc.yaml
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/home-configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\home-configuration.dsc.yaml
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/home-desktop-configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\home-desktop-configuration.dsc.yaml
