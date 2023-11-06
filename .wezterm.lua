@@ -58,4 +58,7 @@ config.mouse_bindings = {
   },
 }
 
+-- WSL のタブを閉じる際の挙動を設定
+config.exit_behavior = "Close",
+
 return config
