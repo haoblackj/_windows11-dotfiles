@@ -72,4 +72,12 @@ properties:
       settings:
         id: Microsoft.VisualStudioCode
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: qBittorrent
+      directives:
+        description: Install qBittorrent
+        allowPrerelease: true
+      settings:
+        id: qBittorrent.qBittorrent
+        source: winget
   configurationVersion: 0.2.0
