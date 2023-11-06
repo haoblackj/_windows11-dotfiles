@@ -38,5 +38,7 @@ if ($homeMachine -eq "Yes") {
 }
 #
 
+git clone https://github.com/kaz399/spzenhan.vim.git C:\WorkTmp\spzenhan.vim
+
 pause
 # Restart-Computer
