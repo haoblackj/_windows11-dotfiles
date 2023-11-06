@@ -71,5 +71,7 @@ config.skip_close_confirmation_for_processes_named = {
   'powershell.exe',
 }
 
+config.window_close_confirmation = 'NeverPrompt'
+
 
 return config
