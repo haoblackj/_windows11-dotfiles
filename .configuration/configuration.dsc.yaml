@@ -73,11 +73,11 @@ properties:
         id: Microsoft.VisualStudioCode
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: qBittorrent
+      id: WezTerm
       directives:
-        description: Install qBittorrent
+        description: Install WezTerm
         allowPrerelease: true
       settings:
-        id: qBittorrent.qBittorrent
+        id: Wez.WezTerm
         source: winget
   configurationVersion: 0.2.0
