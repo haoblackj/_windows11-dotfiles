@@ -20,6 +20,5 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 ## WSL編
 1. WSL上で実行。
 ```
-git clone https://github.com/haoblackj/dotfiles.git
-dotfiles/install.sh
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply haoblackj
 ```
