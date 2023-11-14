@@ -80,4 +80,12 @@ properties:
       settings:
         id: Wez.WezTerm
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: TeraTerm
+      directives:
+        description: Install TeraTerm
+        allowPrerelease: true
+      settings:
+        id: TeraTermProject.teraterm
+        source: winget
   configurationVersion: 0.2.0
