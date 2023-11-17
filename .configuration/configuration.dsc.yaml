@@ -88,4 +88,20 @@ properties:
       settings:
         id: TeraTermProject.teraterm
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: PowerToys
+      directives:
+        description: Install PowerToys
+        allowPrerelease: true
+      settings:
+        id: Microsoft.PowerToys
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Biscuit
+      directives:
+        description: Install Biscuit
+        allowPrerelease: true
+      settings:
+        id: Biscuit.Biscuit
+        source: winget
   configurationVersion: 0.2.0
