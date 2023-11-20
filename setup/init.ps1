@@ -41,9 +41,10 @@ if ($homeMachine -eq "Yes") {
 mkdir C:\WorkTmp
 git clone https://github.com/kaz399/spzenhan.vim.git C:\WorkTmp\spzenhan.vim
 
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/WezTerm_Deploy.bat -OutFile $env:USERPROFILE\WezTerm_Deploy.bat
-# WezTerm_Deploy.bat‚ğŠÇ—ÒŒ ŒÀ‚ÅÀs‚·‚éB
-Start-Process -FilePath $env:USERPROFILE\WezTerm_Deploy.bat -Verb RunAs
+git clone https://github.com/haoblackj/_windows11-dotfiles.git C:\WorkTmp\_windows11-dotfiles
+
+# WezTerm_Deploy.bat‚ğŠÇ—Ò‚Æ‚µ‚ÄÀs
+Start-Process C:\WorkTmp\_windows11-dotfiles\setup\WezTerm_Deploy.bat -Verb RunAs
 
 #pause
 # Restart-Computer
