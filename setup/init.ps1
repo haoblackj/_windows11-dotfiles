@@ -41,5 +41,10 @@ if ($homeMachine -eq "Yes") {
 mkdir C:\WorkTmp
 git clone https://github.com/kaz399/spzenhan.vim.git C:\WorkTmp\spzenhan.vim
 
-pause
+git clone https://github.com/haoblackj/_windows11-dotfiles.git C:\WorkTmp\_windows11-dotfiles
+
+# WezTerm_Deploy.bat‚ğŠÇ—Ò‚Æ‚µ‚ÄÀs
+Start-Process C:\WorkTmp\_windows11-dotfiles\setup\WezTerm_Deploy.bat -Verb RunAs
+
+#pause
 # Restart-Computer

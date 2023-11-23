@@ -48,6 +48,25 @@ config.default_prog = {
   "-l"
 }
 
+-- 起動メニュー設定
+config.launch_menu = {
+  -- 既存のWSLの設定をここに追加（必要に応じて）
+  {
+    label = "Ubuntu (WSL)",
+    args = {"wsl.exe", "--distribution", "Ubuntu", "--cd", "/home/yagu001", "--exec", "/bin/zsh", "-l"}
+  },
+  -- PowerShell 7.4の設定
+  {
+    label = "PowerShell 7.4",
+    args = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe"}
+  },
+  -- cmdの設定
+  {
+    label = "Command Prompt",
+    args = {"cmd.exe"}
+  },
+}
+
 -- マウスの設定
 config.mouse_bindings = {
   -- 右クリックでペーストする設定
