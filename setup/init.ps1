@@ -46,5 +46,17 @@ git clone https://github.com/haoblackj/_windows11-dotfiles.git C:\WorkTmp\_windo
 # WezTerm_Deploy.batを管理者として実行
 Start-Process C:\WorkTmp\_windows11-dotfiles\setup\WezTerm_Deploy.bat -Verb RunAs
 
+# GitHub CLIにブラウザを使ってログインする
+gh auth login -w
+
+# GitHub CLIを使ってdotfiles-privateの最新リリースから*.ttfファイルをダウンロードする
+gh release download $(gh release list -L 1 | awk '{print $1}') -p "*.ttf" -D C:\WorkTmp\fonts
+
+# ダウンロードした*.ttfファイルをインストールする
+# まずは、フォントのインストールに必要なPowerShellモジュールをインストールする
+Install-Module -Name PSWinGlue
+# フォントをインストールする
+Install-Font -Path C:\WorkTmp\fonts
+
 #pause
 # Restart-Computer
