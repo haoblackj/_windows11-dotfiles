@@ -28,7 +28,7 @@ config.keys = {
 }
 
 -- フォントの設定
-config.font = wezterm.font("PlemolJP HS", {weight="Medium", stretch="Normal", style="Normal"})
+config.font = wezterm.font("Firge35Nerd Console", {weight="Medium", stretch="Normal", style="Normal"})
 
 -- フォントサイズの設定
 config.font_size = 16
