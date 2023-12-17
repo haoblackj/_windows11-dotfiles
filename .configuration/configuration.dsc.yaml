@@ -81,6 +81,13 @@ properties:
         id: Wez.WezTerm
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: PowerShell
+      directives:
+        description: Install PowerShell
+        allowPrerelease: true
+      settings:
+        id: Microsoft.PowerShell
+        source: winget
       id: TeraTerm
       directives:
         description: Install TeraTerm
