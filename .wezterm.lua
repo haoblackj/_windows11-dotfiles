@@ -5,9 +5,6 @@ local config = {}
 -- カラースキームの設定
 config.color_scheme = 'Tokyo Night Storm (Gogh)'
 
--- 背景透過
-config.window_background_opacity = 0.85
-
 -- ショートカットキー設定
 config.keys = {
   -- Alt+Shift+Fでフルスクリーン切り替え
