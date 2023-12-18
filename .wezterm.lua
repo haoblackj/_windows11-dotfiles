@@ -89,5 +89,6 @@ config.skip_close_confirmation_for_processes_named = {
 
 config.window_close_confirmation = 'NeverPrompt'
 
+config.window_decorations="RESIZE"
 
 return config
