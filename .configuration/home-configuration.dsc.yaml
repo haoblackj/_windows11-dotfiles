@@ -25,14 +25,6 @@ properties:
         id: CubeSoft.CubePDF
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Kindle
-      directives:
-        description: Install Kindle
-        allowPrerelease: true
-      settings:
-        id: Amazon.Kindle
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Firefox
       directives:
         description: Install Firefox
