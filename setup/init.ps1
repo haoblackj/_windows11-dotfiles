@@ -44,7 +44,7 @@ git clone https://github.com/kaz399/spzenhan.vim.git C:\WorkTmp\spzenhan.vim
 git clone https://github.com/haoblackj/_windows11-dotfiles.git C:\WorkTmp\_windows11-dotfiles
 
 # WezTerm_Deploy.batを管理者として実行
-Start-Process C:\WorkTmp\_windows11-dotfiles\setup\WezTerm_Deploy.bat -Verb RunAs
+Start-Process C:\WorkTmp\_windows11-dotfiles\WezTerm_Deploy.bat -Verb RunAs
 
 # フォントのダウンロード
 Invoke-WebRequest "https://github.com/haoblackj/dotfiles-private/releases/latest/download/v1.3.0.zip" -OutFile "fonts.zip"
