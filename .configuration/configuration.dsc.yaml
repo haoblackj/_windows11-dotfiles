@@ -120,4 +120,12 @@ properties:
       settings:
         id: OliverSchwendener.ueli
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: GitHub.cli
+      directives:
+        description: Install GitHubCli
+        allowPrerelease: true
+      settings:
+        id: GitHub.cli
+        source: winget
   configurationVersion: 0.2.0
