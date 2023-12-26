@@ -112,4 +112,12 @@ properties:
       settings:
         id: Biscuit.Biscuit
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: ueli
+      directives:
+        description: Install ueli
+        allowPrerelease: true
+      settings:
+        id: OliverSchwendener.ueli
+        source: winget
   configurationVersion: 0.2.0
