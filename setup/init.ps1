@@ -25,20 +25,7 @@ git clone https://github.com/haoblackj/_windows11-dotfiles.git C:\WorkTmp\_windo
 # WezTerm_Deploy.batを管理者として実行
 Start-Process C:\WorkTmp\_windows11-dotfiles\WezTerm_Deploy.bat -Verb RunAs
 
-# フォントのダウンロード
-Invoke-WebRequest "https://github.com/haoblackj/dotfiles-private/releases/latest/download/v1.3.0.zip" -OutFile "fonts.zip"
-
-Expand-Archive -Path fonts.zip -DestinationPath C:\WorkTmp\fonts
-
-# ダウンロードした*.ttfファイルをインストールする
-# まずは、フォントのインストールに必要なPowerShellモジュールをインストールする
-Install-Module PPoshTools -Force
-# フォントをインストールする
-Add-Font -Path C:\WorkTmp\fonts\common
-
-if ($homeMachine -eq "Yes") {
-    Add-Font -Path C:\WorkTmp\fonts\home
-}
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/ps1/font-install.ps1'))
 
 gh auth login -w
 
