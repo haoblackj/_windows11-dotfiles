@@ -2,12 +2,8 @@
 ## Windows編
 1. WindowsUpdateを実行し、最新の状態にする。
 ```
-usoclient startscan
-usoclient startdownload
-usoclient scaninstallwait
 usoclient startinteractivescan
 start ms-settings:windowsupdate
-start ms-settings:windowsupdate-action
 ```
 2. Microsoft Storeからストアアプリをアップデートする。
 3. 管理者権限でPowerShellを起動し実行。
