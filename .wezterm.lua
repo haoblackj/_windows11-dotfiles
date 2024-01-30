@@ -52,6 +52,14 @@ config.launch_menu = {
     label = "Ubuntu (WSL)",
     args = {"wsl.exe", "--distribution", "Ubuntu", "--cd", "/home/yagu001", "--exec", "/bin/zsh", "-l"}
   },
+  {
+    label = "ArchLinux - zsh",
+    args = {"wsl.exe", "--distribution", "ArchLinux", "--exec", "/bin/zsh", "-l"}
+  },
+  {
+    label = "ArchLinux - bash",
+    args = {"wsl.exe", "--distribution", "ArchLinux", "--exec", "/bin/bash", "-l"}
+  },
   -- PowerShell 7.4の設定
   {
     label = "PowerShell 7.4",
