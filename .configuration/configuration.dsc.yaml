@@ -9,6 +9,22 @@ properties:
         MinVersion: '10.0.22000'
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: 7zip
+      directives:
+        description: Install 7zip
+        allowPrerelease: true
+      settings:
+        id: 7zip.7zip
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Git
+      directives:
+        description: Install Git
+        allowPrerelease: true
+      settings:
+        id: Git.Git
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: GoogleJapaneseIME
       directives:
         description: Install Google Japanese IME
@@ -127,5 +143,13 @@ properties:
         allowPrerelease: true
       settings:
         id: GitHub.cli
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: honeyview
+      directives:
+        description: Install honeyview
+        allowPrerelease: true
+      settings:
+        id: Bandisoft.honeyview
         source: winget
   configurationVersion: 0.2.0
