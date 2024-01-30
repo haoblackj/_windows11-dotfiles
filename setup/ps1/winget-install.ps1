@@ -13,6 +13,3 @@ if ($homeMachine -eq "Yes") {
         winget configure $env:USERPROFILE\.configuration\home-desktop-configuration.dsc.yaml
     }
 }
-#
-
-refreshenv
