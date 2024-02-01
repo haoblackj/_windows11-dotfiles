@@ -54,11 +54,11 @@ config.launch_menu = {
   },
   {
     label = "ArchLinux - zsh",
-    args = {"wsl.exe", "--distribution", "ArchLinux", "--exec", "/bin/zsh", "-l"}
+    args = {"wsl.exe", "--distribution", "ArchLinux", "--cd", "/home/yagu001", "--exec", "/bin/zsh", "-l"}
   },
   {
     label = "ArchLinux - bash",
-    args = {"wsl.exe", "--distribution", "ArchLinux", "--exec", "/bin/bash", "-l"}
+    args = {"wsl.exe", "--distribution", "ArchLinux", "--cd", "/home/yagu001", "--exec", "/bin/bash", "-l"}
   },
   -- PowerShell 7.4の設定
   {
