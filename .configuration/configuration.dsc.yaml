@@ -145,11 +145,11 @@ properties:
         id: GitHub.cli
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: honeyview
+      id: WingetUIStore
       directives:
-        description: Install honeyview
+        description: Install WingetUIStore
         allowPrerelease: true
       settings:
-        id: Bandisoft.honeyview
+        id: SomePythonThings.WingetUIStore
         source: winget
   configurationVersion: 0.2.0
