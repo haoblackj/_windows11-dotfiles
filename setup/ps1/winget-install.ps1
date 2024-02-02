@@ -13,3 +13,6 @@ if ($homeMachine -eq "Yes") {
         winget configure $env:USERPROFILE\.configuration\home-desktop-configuration.dsc.yaml
     }
 }
+
+Install-Module -Name idf-ext
+refreshenv
