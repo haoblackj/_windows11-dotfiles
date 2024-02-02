@@ -9,14 +9,6 @@ properties:
         MinVersion: '10.0.22000'
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: 7zip
-      directives:
-        description: Install 7zip
-        allowPrerelease: true
-      settings:
-        id: 7zip.7zip
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Git
       directives:
         description: Install Git
