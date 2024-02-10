@@ -56,4 +56,12 @@ properties:
       settings:
         id: qBittorrent.qBittorrent
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Discord
+      directives:
+        description: Install Discord
+        allowPrerelease: true
+      settings:
+        id: Discord.Discord
+        source: winget
   configurationVersion: 0.2.0
