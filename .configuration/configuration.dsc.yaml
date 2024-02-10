@@ -144,4 +144,12 @@ properties:
       settings:
         id: SomePythonThings.WingetUIStore
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Everything
+      directives:
+        description: Install Everything
+        allowPrerelease: true
+      settings:
+        id: voidtools.Everything
+        source: winget
   configurationVersion: 0.2.0
