@@ -58,7 +58,7 @@ if ($boolwindowsUpdate -eq "No") {
 # アプリインストーラーをインストールしているか確認する。
 # インストーラーファイルがあれば続行する。
 # なければインストーラーをダウンロードして、インストールする。
-if (Test-Path "$env:userprofile\appdata\local\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle" -PathType Leaf) {
+if (Test-Path "$env:userprofile\appdata\local\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -PathType Leaf) {
     Write-Host "=============================="
     Write-Host "アプリインストーラーはすでに存在しています"
     Write-Host "=============================="
@@ -68,9 +68,9 @@ else {
     Write-Host "アプリインストーラーをダウンロードしてインストールします"
     $latestVersion = (Invoke-RestMethod -Uri "https://api.github.com/repos/microsoft/winget-cli/releases/latest").tag_name
 
-    Invoke-WebRequest -Uri "https://github.com/microsoft/winget-cli/releases/download/$latestVersion/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle" -OutFile "$env:userprofile\appdata\local\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle"
+    Invoke-WebRequest -Uri "https://github.com/microsoft/winget-cli/releases/download/$latestVersion/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -OutFile "$env:userprofile\appdata\local\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
     # インストーラーの実行
-    Add-AppPackage -Path "$env:userprofile\appdata\local\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle"
+    Add-AppPackage -Path "$env:userprofile\appdata\local\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
     Write-Host "=============================="
     # wingetのバージョン確認
     winget --version
