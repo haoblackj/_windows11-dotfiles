@@ -58,7 +58,7 @@ if ($boolwindowsUpdate -eq "No") {
 # アプリインストーラーをインストールしているか確認する。
 # インストーラーファイルがあれば続行する。
 # なければインストーラーをダウンロードして、インストールする。
-if (Test-Path "" -PathType Leaf) {
+if (Test-Path "$env:userprofile\appdata\local\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle" -PathType Leaf) {
     Write-Host "=============================="
     Write-Host "アプリインストーラーはすでに存在しています"
     Write-Host "=============================="
