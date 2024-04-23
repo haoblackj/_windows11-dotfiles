@@ -8,7 +8,7 @@ if (Test-Path "$env:USERPROFILE\init.ps1" -PathType Leaf) {
 else {
     Write-Host "=============================="
     Write-Host "init.ps1をダウンロードしてユーザプロファイルルートに配置します"
-    wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/init.ps1" -OutFile "$env:USERPROFILE\init.ps1"
+    curl.exe -L "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/init.ps1" -o "$env:USERPROFILE\init.ps1"
     # init.ps1のショートカットを作成する
     Write-Host "init.ps1のショートカットを作成します"
     # スクリプト自体のフルパス
@@ -68,7 +68,8 @@ else {
     Write-Host "アプリインストーラーをダウンロードしてインストールします"
     $latestVersion = (Invoke-RestMethod -Uri "https://api.github.com/repos/microsoft/winget-cli/releases/latest").tag_name
 
-    Invoke-WebRequest -Uri "https://github.com/microsoft/winget-cli/releases/download/$latestVersion/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -OutFile "$env:userprofile\appdata\local\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+    curl.exe -L "https://github.com/microsoft/winget-cli/releases/download/$latestVersion/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -o "$env:userprofile\appdata\local\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+
     # インストーラーの実行
     Add-AppPackage -Path "$env:userprofile\appdata\local\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
     Write-Host "=============================="
