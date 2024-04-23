@@ -55,10 +55,27 @@ $boolwindowsUpdate = Read-Host "Is Windows Update up to date? (Yes/No)"
 if ($boolwindowsUpdate -eq "No") {
     exit
 }
-# Microsoft Storeアプリを最新まで更新したかどうか、Yes/Noで質問する。Yesならば続行する。
-$storeUpdate = Read-Host "Is Microsoft Store up to date? (Yes/No)"
-if ($storeUpdate -eq "No") {
-    exit
+# アプリインストーラーをインストールしているか確認する。
+# インストーラーファイルがあれば続行する。
+# なければインストーラーをダウンロードして、インストールする。
+if (Test-Path "" -PathType Leaf) {
+    Write-Host "=============================="
+    Write-Host "アプリインストーラーはすでに存在しています"
+    Write-Host "=============================="
+}
+else {
+    Write-Host "=============================="
+    Write-Host "アプリインストーラーをダウンロードしてインストールします"
+    $latestVersion = (Invoke-RestMethod -Uri "https://api.github.com/repos/microsoft/winget-cli/releases/latest").tag_name
+
+    Invoke-WebRequest -Uri "https://github.com/microsoft/winget-cli/releases/download/$latestVersion/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle" -OutFile "$env:userprofile\appdata\local\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle"
+    # インストーラーの実行
+    Add-AppPackage -Path "$env:userprofile\appdata\local\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle"
+    Write-Host "=============================="
+    # wingetのバージョン確認
+    winget --version
+    Write-Host "=============================="
+    ping localhost -n 5 > $null
 }
 
 # .gitconfigの配置が終わっているか確認する
@@ -112,7 +129,7 @@ else {
     Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/ps1/wsl-install.ps1'))
     Write-Host "=============================="
     # 5秒待つ
-    Start-Sleep -s 5
+    ping localhost -n 5 > $null
     # OSを再起動する
     Restart-Computer
 }
@@ -132,7 +149,7 @@ else {
     Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/ps1/winget-install.ps1'))
     Write-Host "=============================="
     # 5秒待つ
-    Start-Sleep -s 5
+    ping localhost -n 5 > $null
     # OSを再起動する
     Restart-Computer
 }
