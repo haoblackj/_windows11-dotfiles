@@ -1,17 +1,50 @@
-#自分自身をダウンロードし、ユーザプロファイルルートに配置する
+#自分自身をダウンロードし、スタートアップフォルダに配置する
 #ダウンロードされていたらスキップする
 if (Test-Path "$env:USERPROFILE\init.ps1") {
     Write-Host "=============================="
     Write-Host "init.ps1はすでに存在しています"
     Write-Host "=============================="
-} else {
+}
+else {
     Write-Host "=============================="
     Write-Host "init.ps1をダウンロードしてユーザプロファイルルートに配置します"
     wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/init.ps1" -OutFile "$env:USERPROFILE\init.ps1"
-    # init.ps1の配置が終わったか確認する
-    if (Test-Path "$env:USERPROFILE\init.ps1") {
+    # init.ps1のショートカットを作成する
+    Write-Host "init.ps1のショートカットを作成します"
+    # スクリプト自体のフルパス
+    $selfPath = "$env:USERPROFILE\init.ps1"
+
+    # スタートアップフォルダのパスを取得
+    $startupPath = [Environment]::GetFolderPath("Startup")
+
+    # ショートカットの作成先パス
+    $shortcutPath = Join-Path -Path $startupPath -ChildPath "MyScriptShortcut.lnk"
+
+    # WScript.Shell オブジェクトを作成
+    $shell = New-Object -ComObject WScript.Shell
+
+    # ショートカットオブジェクトを作成
+    $shortcut = $shell.CreateShortcut($shortcutPath)
+
+    # ショートカットのプロパティを設定
+    $shortcut.TargetPath = "powershell.exe"
+    $shortcut.Arguments = "-ExecutionPolicy Bypass -File `"$selfPath`""
+    $shortcut.WorkingDirectory = Split-Path -Path $selfPath
+    $shortcut.IconLocation = "powershell.exe"
+
+    # ショートカットを保存
+    $shortcut.Save()
+
+    # COM オブジェクトの解放
+    [System.Runtime.InteropServices.Marshal]::ReleaseComObject($shell) | Out-Null
+
+    Write-Host "init.ps1のショートカットを作成しました"
+
+    # init.ps1ショートカットの配置が終わったか確認する
+    if (Test-Path "$startupPath\MyScriptShortcut.lnk") {
         Write-Host "init.ps1の配置が完了しました"
-    } else {
+    }
+    else {
         Write-Host "init.ps1の配置が失敗しました"
     }
     Write-Host "=============================="
@@ -33,7 +66,8 @@ if (Test-Path "$env:USERPROFILE\.gitconfig") {
     Write-Host "=============================="
     Write-Host "gitconfigの配置は完了しています"
     Write-Host "=============================="
-} else {
+}
+else {
     Write-Host "=============================="
     #.gitconfigの配置
     Write-Host "gitconfigのダウンロードとユーザプロファイルへの配置"
@@ -41,7 +75,8 @@ if (Test-Path "$env:USERPROFILE\.gitconfig") {
     # .gitconfigの配置が終わったか確認する
     if (Test-Path "$env:USERPROFILE\.gitconfig") {
         Write-Host "gitconfigの配置が完了しました"
-    } else {
+    }
+    else {
         Write-Host "gitconfigの配置が失敗しました"
     }
     Write-Host "=============================="
@@ -53,7 +88,8 @@ if ($null -eq $teams) {
     Write-Host "=============================="
     Write-Host "Microsoft Teamsはアンインストールされています"
     Write-Host "=============================="
-} else {
+}
+else {
     Write-Host "=============================="
     Write-Host "Microsoft Teamsをアンインストールします"
     Write-Host "=============================="
@@ -68,7 +104,8 @@ if (Test-Path "$env:USERPROFILE\wslInstalled.log") {
     Write-Host "=============================="
     Write-Host "WSLのインストールは完了しています"
     Write-Host "=============================="
-} else {
+}
+else {
     Write-Host "=============================="
     Write-Host "WSLインストールスクリプトを実行します"
     Write-Host "=============================="
@@ -87,7 +124,8 @@ if (Test-Path "$env:USERPROFILE\.configuration") {
     Write-Host "=============================="
     Write-Host "ソフトウェアはインストールされています"
     Write-Host "=============================="
-} else {
+}
+else {
     Write-Host "=============================="
     Write-Host "wingetインストールスクリプトを実行します"
     Write-Host "=============================="
@@ -105,7 +143,8 @@ if (Test-Path "C:\WorkTmp") {
     Write-Host "=============================="
     Write-Host "作業ディレクトリは作成されています"
     Write-Host "=============================="
-} else {
+}
+else {
     Write-Host "=============================="
     Write-Host "作業ディレクトリを作成します"
     Write-Host "=============================="
@@ -127,7 +166,8 @@ if (Test-Path "C:\Program Files\Git\cmd\git.exe") {
     git clone https://github.com/kaz399/spzenhan.vim.git C:\WorkTmp\spzenhan.vim
     git clone https://github.com/haoblackj/_windows11-dotfiles.git C:\WorkTmp\_windows11-dotfiles
     Write-Host "=============================="
-} else {
+}
+else {
     Write-Host "=============================="
     Write-Host "Gitが使えません"
     Write-Host "=============================="
@@ -140,7 +180,8 @@ if (Test-Path "C:\WorkTmp\_windows11-dotfiles\WezTerm_Deploy.bat") {
     Write-Host "=============================="
     Write-Host "WezTermの設定は完了しています"
     Write-Host "=============================="
-} else {
+}
+else {
     Write-Host "=============================="
     Write-Host "WezTerm設定スクリプトを実行します"
     Write-Host "=============================="
@@ -155,7 +196,8 @@ if (Test-Path "$env:USERPROFILE\fontInstalled.log") {
     Write-Host "=============================="
     Write-Host "フォントのインストールは完了しています"
     Write-Host "=============================="
-} else {
+}
+else {
     Write-Host "=============================="
     Write-Host "フォントインストールスクリプトを実行します"
     Write-Host "=============================="
@@ -176,7 +218,8 @@ if (Test-Path "$env:USERPROFILE\.config\gh\hosts.yml") {
     Write-Host "=============================="
     Write-Host "GitHub CLIにサインインは完了しています"
     Write-Host "=============================="
-} else {
+}
+else {
     Write-Host "=============================="
     Write-Host "GitHub CLIにサインインを行います"
     Write-Host "=============================="
@@ -185,10 +228,13 @@ if (Test-Path "$env:USERPROFILE\.config\gh\hosts.yml") {
     gh repo clone haoblackj/AutoHotkey
 }
 
-# init.ps1他、作成したフラグファイルを削除する
+# init.ps1他、作成したフラグファイル、ショートカットを削除する
+# スタートアップフォルダのパスを取得
+$startupPath = [Environment]::GetFolderPath("Startup")
 Remove-Item -Path "$env:USERPROFILE\init.ps1" -Force
 Remove-Item -Path "$env:USERPROFILE\wslInstalled.log" -Force
 Remove-Item -Path "$env:USERPROFILE\fontInstalled.log" -Force
+Remove-Item -Path "$startupPath\MyScriptShortcut.lnk" -Force
 
 #pause
 # Restart-Computer
