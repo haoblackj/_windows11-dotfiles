@@ -13,7 +13,3 @@ if ($homeMachine -eq "Yes") {
         winget configure $env:USERPROFILE\.configuration\home-desktop-configuration.dsc.yaml
     }
 }
-
-Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/ps1/Update-SessionEnvironment.ps1'))
-
-RefreshEnv
