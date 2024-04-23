@@ -1,6 +1,6 @@
 #自分自身をダウンロードし、スタートアップフォルダに配置する
 #ダウンロードされていたらスキップする
-if (Test-Path "$env:USERPROFILE\init.ps1") {
+if (Test-Path "$env:USERPROFILE\init.ps1" -PathType Leaf) {
     Write-Host "=============================="
     Write-Host "init.ps1はすでに存在しています"
     Write-Host "=============================="
@@ -41,7 +41,7 @@ else {
     Write-Host "init.ps1のショートカットを作成しました"
 
     # init.ps1ショートカットの配置が終わったか確認する
-    if (Test-Path "$startupPath\MyScriptShortcut.lnk") {
+    if (Test-Path "$startupPath\MyScriptShortcut.lnk" -PathType Leaf) {
         Write-Host "init.ps1の配置が完了しました"
     }
     else {
@@ -62,7 +62,7 @@ if ($storeUpdate -eq "No") {
 }
 
 # .gitconfigの配置が終わっているか確認する
-if (Test-Path "$env:USERPROFILE\.gitconfig") {
+if (Test-Path "$env:USERPROFILE\.gitconfig" -PathType Leaf) {
     Write-Host "=============================="
     Write-Host "gitconfigの配置は完了しています"
     Write-Host "=============================="
@@ -100,7 +100,7 @@ else {
 # WSLのインストールが完了しているか確認する
 # "$env:USERPROFILE\wslInstalled.log"が存在していたら完了と判断する
 # WSLインストールが完了していない場合は、WSLインストールスクリプトを実行する
-if (Test-Path "$env:USERPROFILE\wslInstalled.log") {
+if (Test-Path "$env:USERPROFILE\wslInstalled.log" -PathType Leaf) {
     Write-Host "=============================="
     Write-Host "WSLのインストールは完了しています"
     Write-Host "=============================="
@@ -120,7 +120,7 @@ else {
 # ソフトウェアがインストールされたか確認する
 # $env:USERPROFILE\.configurationが存在していたら、インストールされていると判断する
 # インストールされていない場合は、wingetインストールスクリプトを実行する
-if (Test-Path "$env:USERPROFILE\.configuration") {
+if (Test-Path "$env:USERPROFILE\.configuration" -PathType Container) {
     Write-Host "=============================="
     Write-Host "ソフトウェアはインストールされています"
     Write-Host "=============================="
@@ -139,7 +139,7 @@ else {
 
 # 作業ディレクトリを作成する
 # 作業ディレクトリが作成されていれば、このフェーズは完了とする
-if (Test-Path "C:\WorkTmp") {
+if (Test-Path "C:\WorkTmp" -PathType Container) {
     Write-Host "=============================="
     Write-Host "作業ディレクトリは作成されています"
     Write-Host "=============================="
@@ -156,7 +156,7 @@ else {
 # 1. spzenhan.vim
 # 2. _windows11-dotfiles
 # 使えない場合はエラーメッセージを表示する
-if (Test-Path "C:\Program Files\Git\cmd\git.exe") {
+if (Test-Path "C:\Program Files\Git" -PathType Container) {
     Write-Host "=============================="
     Write-Host "Gitは使えます"
     Write-Host "=============================="
@@ -176,7 +176,7 @@ else {
 # WezTermの設定を行う
 # WezTermの設定が完了しているか確認する
 # WezTermの設定が完了していない場合は、WezTerm設定スクリプトを実行する
-if (Test-Path "C:\WorkTmp\_windows11-dotfiles\WezTerm_Deploy.bat") {
+if (Test-Path "C:\WorkTmp\_windows11-dotfiles\WezTerm_Deploy.bat" -PathType Leaf) {
     Write-Host "=============================="
     Write-Host "WezTermの設定は完了しています"
     Write-Host "=============================="
@@ -192,7 +192,7 @@ else {
 # フォントインストール済のフラグファイルがあるか確認する
 # フォントインストール済のフラグファイルがある場合は、フォントインストール済と判断する
 # フォントインストール済のフラグファイルがない場合は、フォントインストールスクリプトを実行する
-if (Test-Path "$env:USERPROFILE\fontInstalled.log") {
+if (Test-Path "$env:USERPROFILE\fontInstalled.log" -PathType Leaf) {
     Write-Host "=============================="
     Write-Host "フォントのインストールは完了しています"
     Write-Host "=============================="
@@ -214,7 +214,7 @@ else {
 # GitHub CLIにサインインを行う
 # GitHub CLIにサインインが完了しているか確認する
 # GitHub CLIにサインインが完了していない場合は、サインインを実行する
-if (Test-Path "$env:USERPROFILE\.config\gh\hosts.yml") {
+if (Test-Path "$env:USERPROFILE\.config\gh\hosts.yml" -PathType Leaf) {
     Write-Host "=============================="
     Write-Host "GitHub CLIにサインインは完了しています"
     Write-Host "=============================="
