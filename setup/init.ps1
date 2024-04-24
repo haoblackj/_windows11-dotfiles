@@ -1,5 +1,7 @@
 #自分自身をダウンロードし、スタートアップフォルダに配置する
 #ダウンロードされていたらスキップする
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole("Administrators")) { Start-Process powershell.exe "-File `"$PSCommandPath`"" -Verb RunAs; exit }
+
 if (Test-Path "$env:USERPROFILE\init.ps1" -PathType Leaf) {
     Write-Host "=============================="
     Write-Host "init.ps1はすでに存在しています"
