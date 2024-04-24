@@ -17,7 +17,7 @@ function DownloadLatestReleaseZip {
     $zipUrl = "https://github.com/$owner/$repo/releases/download/$latestTag/$filenamePrefix$latestTag$filenamePostfix.zip"
 
     # ZIPファイルをダウンロードします
-    Invoke-WebRequest -Uri $zipUrl -OutFile $savePath
+    curl.exe -L $zipUrl -o $savePath
 }
 
 # カレントディレクトリを取得します
