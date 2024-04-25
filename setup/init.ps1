@@ -126,10 +126,10 @@ else {
 }
 
 # UACの現在の状態を取得
-$uacStatus = (Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System").EnableLUA
+$BeforeuacStatus = (Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System").EnableLUA
 
 # UACが有効な場合（$uacStatusが1の場合）、それを無効にする
-if ($uacStatus -eq 1) {
+if ($BeforeuacStatus -eq 1) {
     # UACを無効に設定
     Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name EnableLUA -Value 0
     # UACの無効化を完了するために再起動する
