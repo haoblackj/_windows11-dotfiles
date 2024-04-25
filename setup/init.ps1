@@ -285,5 +285,24 @@ Remove-Item -Path "$env:USERPROFILE\wslInstalled.log" -Force
 Remove-Item -Path "$env:USERPROFILE\fontInstalled.log" -Force
 Remove-Item -Path "$startupPath\MyScriptShortcut.lnk" -Force
 
+# UACの現在の状態を取得
+$AfteruacStatus = (Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System").EnableLUA
+
+# UACが無効な場合（$uacStatusが0の場合）、それを有効にする
+if ($AfteruacStatus -eq 0) {
+    # UACを有効に設定
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name EnableLUA -Value 1
+
+    # ユーザーにシステムの再起動を促す
+    Write-Host "UAC has been enabled. Please restart your system for changes to take effect."
+    # 5秒待つ
+    ping localhost -n 5 > $null
+    # OSを再起動する
+    Restart-Computer
+} else {
+    # UACが既に有効な場合
+    Write-Host "UAC is already enabled."
+}
+
 #pause
 # Restart-Computer
