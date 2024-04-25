@@ -57,6 +57,14 @@ $boolwindowsUpdate = Read-Host "Is Windows Update up to date? (Yes/No)"
 if ($boolwindowsUpdate -eq "No") {
     exit
 }
+
+# 実行中のユーザコンテクストを表示する
+Write-Host "=============================="
+Write-Host "実行中のユーザコンテクスト"
+Write-Host "=============================="
+whoami
+Write-Host "=============================="
+
 # アプリインストーラーをインストールしているか確認する。
 # インストーラーファイルがあれば続行する。
 # なければインストーラーをダウンロードして、インストールする。
@@ -117,6 +125,25 @@ else {
     Get-AppxProvisionedPackage -Online | Where-Object DisplayName -eq "MicrosoftTeams" | Remove-AppxProvisionedPackage -Online
 }
 
+# UACの現在の状態を取得
+$uacStatus = (Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System").EnableLUA
+
+# UACが有効な場合（$uacStatusが1の場合）、それを無効にする
+if ($uacStatus -eq 1) {
+    # UACを無効に設定
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name EnableLUA -Value 0
+    # UACの無効化を完了するために再起動する
+    Write-Host "UAC has been disabled. Restarting the computer..."
+    # 5秒待つ
+    ping localhost -n 5 > $null
+    # OSを再起動する
+    Restart-Computer
+} else {
+    # UACが既に無効な場合
+    Write-Host "UAC is already disabled."
+}
+
+
 # WSLのインストールが完了しているか確認する
 # "$env:USERPROFILE\wslInstalled.log"が存在していたら完了と判断する
 # WSLインストールが完了していない場合は、WSLインストールスクリプトを実行する
@@ -131,6 +158,8 @@ else {
     Write-Host "=============================="
     Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/ps1/wsl-install.ps1'))
     Write-Host "=============================="
+    # WSLインストールが完了したとメッセージを表示する
+    Write-Host "WSLのインストールが完了しました"
     # 5秒待つ
     ping localhost -n 5 > $null
     # OSを再起動する
