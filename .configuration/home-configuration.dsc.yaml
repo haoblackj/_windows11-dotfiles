@@ -32,20 +32,4 @@ properties:
       settings:
         id: Mozilla.Firefox
         source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Zotero
-      directives:
-        description: Install Zotero
-        allowPrerelease: true
-      settings:
-        id: Zotero.Zotero
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Obsidian
-      directives:
-        description: Install Obsidian
-        allowPrerelease: true
-      settings:
-        id: Obsidian.Obsidian
-        source: winget
   configurationVersion: 0.2.0
