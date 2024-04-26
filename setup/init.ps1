@@ -138,6 +138,7 @@ if ($BeforeuacStatus -eq 1) {
     ping localhost -n 5 > $null
     # OSを再起動する
     Restart-Computer
+    exit
 } else {
     # UACが既に無効な場合
     Write-Host "UAC is already disabled."
@@ -164,6 +165,7 @@ else {
     ping localhost -n 5 > $null
     # OSを再起動する
     Restart-Computer
+    exit
 }
 
 # ソフトウェアがインストールされたか確認する
@@ -184,6 +186,7 @@ else {
     ping localhost -n 5 > $null
     # OSを再起動する
     Restart-Computer
+    exit
 }
 
 # 作業ディレクトリを作成する
@@ -225,7 +228,7 @@ else {
 # WezTermの設定を行う
 # WezTermの設定が完了しているか確認する
 # WezTermの設定が完了していない場合は、WezTerm設定スクリプトを実行する
-if (Test-Path "C:\WorkTmp\_windows11-dotfiles\WezTerm_Deploy.bat" -PathType Leaf) {
+if (Test-Path "$env:USERPROFILE\.wezterm.lua" -PathType Leaf) {
     Write-Host "=============================="
     Write-Host "WezTermの設定は完了しています"
     Write-Host "=============================="
@@ -299,6 +302,7 @@ if ($AfteruacStatus -eq 0) {
     ping localhost -n 5 > $null
     # OSを再起動する
     Restart-Computer
+    exit
 } else {
     # UACが既に有効な場合
     Write-Host "UAC is already enabled."
