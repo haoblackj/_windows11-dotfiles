@@ -129,7 +129,7 @@ config.colors = {
 
 config.window_close_confirmation = 'NeverPrompt'
 
-config.window_decorations="RESIZE"
+config.window_decorations="INTEGRATED_BUTTONS|RESIZE"
 
 -- 背景の設定
 config.window_background_opacity = 0.5
