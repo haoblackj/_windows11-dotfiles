@@ -4,4 +4,5 @@ scoop bucket add extras
 scoop bucket add version
 scoop bucket add nerd-fonts
 
-scoop install git aria2 7zip sumatrapdf everything powertoys autohotkey vscode wezterm teraterm ueli main/gh googlechrome bitwarden
+scoop install git aria2 7zip
+scoop install sumatrapdf everything powertoys autohotkey vscode wezterm teraterm ueli main/gh googlechrome bitwarden
