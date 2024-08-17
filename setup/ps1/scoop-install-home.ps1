@@ -1,1 +1,1 @@
-scoop install discord eagle qbittorrent
+scoop install discord qbittorrent
