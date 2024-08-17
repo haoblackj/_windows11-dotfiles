@@ -24,12 +24,4 @@ properties:
       settings:
         id: CubeSoft.CubePDF
         source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Firefox
-      directives:
-        description: Install Firefox
-        allowPrerelease: true
-      settings:
-        id: Mozilla.Firefox
-        source: winget
   configurationVersion: 0.2.0

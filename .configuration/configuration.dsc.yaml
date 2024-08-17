@@ -9,44 +9,12 @@ properties:
         MinVersion: '10.0.22000'
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Git
-      directives:
-        description: Install Git
-        allowPrerelease: true
-      settings:
-        id: Git.Git
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: GoogleJapaneseIME
       directives:
         description: Install Google Japanese IME
         allowPrerelease: true
       settings:
         id: Google.JapaneseIME
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: GoogleChrome
-      directives:
-        description: Install Google Chrome
-        allowPrerelease: true
-      settings:
-        id: Google.Chrome
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Bitwarden
-      directives:
-        description: Install Bitwarden
-        allowPrerelease: true
-      settings:
-        id: Bitwarden.Bitwarden
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: SumatraPDF
-      directives:
-        description: Install SumatraPDF
-        allowPrerelease: true
-      settings:
-        id: SumatraPDF.SumatraPDF
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: ExplorerPatcher
@@ -65,52 +33,12 @@ properties:
         id: Microsoft.WindowsADK
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: AutoHotkey
-      directives:
-        description: Install AutoHotkey
-        allowPrerelease: true
-      settings:
-        id: AutoHotkey.AutoHotkey
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: VSCode
-      directives:
-        description: Install VSCode
-        allowPrerelease: true
-      settings:
-        id: Microsoft.VisualStudioCode
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: WezTerm
-      directives:
-        description: Install WezTerm
-        allowPrerelease: true
-      settings:
-        id: Wez.WezTerm
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: PowerShell
       directives:
         description: Install PowerShell
         allowPrerelease: true
       settings:
         id: Microsoft.PowerShell
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: TeraTerm
-      directives:
-        description: Install TeraTerm
-        allowPrerelease: true
-      settings:
-        id: TeraTermProject.teraterm
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: PowerToys
-      directives:
-        description: Install PowerToys
-        allowPrerelease: true
-      settings:
-        id: Microsoft.PowerToys
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Biscuit
@@ -121,35 +49,11 @@ properties:
         id: Biscuit.Biscuit
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: ueli
-      directives:
-        description: Install ueli
-        allowPrerelease: true
-      settings:
-        id: OliverSchwendener.ueli
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: GitHub.cli
-      directives:
-        description: Install GitHubCli
-        allowPrerelease: true
-      settings:
-        id: GitHub.cli
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: WingetUIStore
       directives:
         description: Install WingetUIStore
         allowPrerelease: true
       settings:
         id: SomePythonThings.WingetUIStore
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Everything
-      directives:
-        description: Install Everything
-        allowPrerelease: true
-      settings:
-        id: voidtools.Everything
         source: winget
   configurationVersion: 0.2.0
