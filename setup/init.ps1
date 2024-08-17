@@ -189,6 +189,22 @@ else {
     exit
 }
 
+# scoopがインストールされているか確認する
+# scoopがインストールされていない場合は、scoopインストールスクリプトを実行する
+if (Test-Path "$env:USERPROFILE\scoop" -PathType Container) {
+    Write-Host "=============================="
+    Write-Host "scoopはインストールされています"
+    Write-Host "=============================="
+}
+else {
+    Write-Host "=============================="
+    Write-Host "scoopインストールスクリプトを実行します"
+    Write-Host "=============================="
+    # scoopインストールスクリプトを実行する
+    Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/ps1/scoop-install.ps1'))
+    Write-Host "=============================="
+}
+
 # 作業ディレクトリを作成する
 # 作業ディレクトリが作成されていれば、このフェーズは完了とする
 if (Test-Path "C:\WorkTmp" -PathType Container) {
