@@ -228,6 +228,14 @@ if (Test-Path "C:\Program Files\Git" -PathType Container) {
     Write-Host "=============================="
     Write-Host "Gitは使えます"
     Write-Host "=============================="
+    # Get the current Windows username
+    $username = [System.Environment]::UserName
+
+    # Set the Git Credential Manager path based on the username
+    $credentialHelper = "/mnt/c/Users/$username/scoop/apps/git/current/mingw64/bin/git-credential-manager.exe"
+
+    git config --global credential.helper $credentialHelper
+
     Write-Host "=============================="
     Write-Host "リポジトリをクローンします"
     Write-Host "=============================="
