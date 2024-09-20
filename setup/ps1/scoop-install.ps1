@@ -1,4 +1,4 @@
-irm get.scoop.sh | iex
+irm get.scoop.sh -outfile 'scoop-install.ps1'
 
 scoop install git aria2 7zip
 
