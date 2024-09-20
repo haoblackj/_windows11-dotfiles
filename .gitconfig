@@ -4,3 +4,7 @@
 [core]
     autocrlf = false
     quotepath = false
+[credential]
+	helper = manager
+[safe]
+	directory = C:/WorkTmp/AutoHotkey
