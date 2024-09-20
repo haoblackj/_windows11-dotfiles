@@ -77,7 +77,7 @@ if ($homeMachine -eq "Yes") {
 
 # フォントをインストールします
 # まずは、フォントのインストールに必要なPowerShellモジュールをインストールする
-Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Scope CurrentUser
+# Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Scope CurrentUser
 Install-Module PPoshTools -Force -Scope CurrentUser
 # フォントをインストールする
 Add-Font -Path C:\WorkTmp\fonts
