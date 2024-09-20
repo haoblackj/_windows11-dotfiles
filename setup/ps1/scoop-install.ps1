@@ -1,3 +1,4 @@
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm get.scoop.sh -outfile 'scoop-install.ps1'
 
 .\scoop-install.ps1
