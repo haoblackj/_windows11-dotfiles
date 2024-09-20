@@ -232,7 +232,7 @@ if (Test-Path "C:\Program Files\Git" -PathType Container) {
     $username = [System.Environment]::UserName
 
     # Set the Git Credential Manager path based on the username
-    $credentialHelper = "/mnt/c/Users/$username/scoop/apps/git/current/mingw64/bin/git-credential-manager.exe"
+    $credentialHelper = "c:\Users\$username\scoop\apps\git\current\mingw64\bin\git-credential-manager.exe"
 
     git config --global credential.helper $credentialHelper
 
