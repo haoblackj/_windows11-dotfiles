@@ -17,14 +17,6 @@ properties:
         id: Google.JapaneseIME
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: ExplorerPatcher
-      directives:
-        description: Install ExplorerPatcher
-        allowPrerelease: true
-      settings:
-        id: valinet.ExplorerPatcher
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: WindowsADK
       directives:
         description: Install Windows ADK
@@ -55,5 +47,21 @@ properties:
         allowPrerelease: true
       settings:
         id: SomePythonThings.WingetUIStore
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: GoogleChrome
+      directives:
+        description: Install Google Chrome
+        allowPrerelease: true
+      settings:
+        id: Google.Chrome
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Firefox
+      directives:
+        description: Install Firefox
+        allowPrerelease: true
+      settings:
+        id: Mozilla.Firefox
         source: winget
   configurationVersion: 0.2.0
