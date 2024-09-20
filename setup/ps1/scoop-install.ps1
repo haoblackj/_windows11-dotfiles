@@ -6,4 +6,4 @@ scoop bucket add extras
 scoop bucket add versions
 scoop bucket add nerd-fonts
 
-scoop install sumatrapdf everything powertoys autohotkey vscode wezterm teraterm ueli main/gh googlechrome bitwarden slack
+scoop install sumatrapdf everything powertoys autohotkey1.1 vscode wezterm teraterm main/gh bitwarden slack honeyview
