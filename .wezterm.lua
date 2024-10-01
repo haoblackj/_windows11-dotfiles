@@ -134,17 +134,17 @@ config.window_decorations="INTEGRATED_BUTTONS|RESIZE"
 -- 背景の設定
 config.window_background_opacity = 0.5
 
-config.window_background_image = "C:\\WorkTmp\\mMeyexn.jpeg"
-config.window_background_image_hsb = {
-  -- 背景画像の明るさ
-  -- 1.0で元画像から変更なし
-  brightness = 0.5,
-  -- 色相の設定
-  -- 1.0で元画像から変更なし
-  hue = 1.0,
-  -- 彩度の調整
-  -- 1.0で元画像から変更なし
-  saturation = 1.0,
-}
+-- config.window_background_image = "C:\\WorkTmp\\mMeyexn.jpeg"
+-- config.window_background_image_hsb = {
+--   -- 背景画像の明るさ
+--   -- 1.0で元画像から変更なし
+--   brightness = 0.5,
+--   -- 色相の設定
+--   -- 1.0で元画像から変更なし
+--   hue = 1.0,
+--   -- 彩度の調整
+--   -- 1.0で元画像から変更なし
+--   saturation = 1.0,
+-- }
 
 return config
