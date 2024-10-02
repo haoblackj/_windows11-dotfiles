@@ -171,7 +171,7 @@ else {
 # ソフトウェアがインストールされたか確認する
 # $env:USERPROFILE\.configuration\winget-install.doneが存在していたら、インストールされていると判断する
 # インストールされていない場合は、wingetインストールスクリプトを実行する
-if (Test-Path "$env:USERPROFILE\.configuration\winget-install.done" -PathType File) {
+if (Test-Path "$env:USERPROFILE\.configuration\winget-install.done" -PathType Leaf) {
     Write-Host "=============================="
     Write-Host "ソフトウェアはインストールされています"
     Write-Host "=============================="
