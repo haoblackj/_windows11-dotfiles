@@ -224,7 +224,8 @@ else {
 # 1. spzenhan.vim
 # 2. _windows11-dotfiles
 # 使えない場合はエラーメッセージを表示する
-if (Test-Path "C:\Program Files\Git" -PathType Container) {
+# scoopでインストールしたGitを使う
+if (Test-Path "C:\Users\$env:USERNAME\scoop\apps\git\current\mingw64\bin\git.exe" -PathType Leaf) {
     Write-Host "=============================="
     Write-Host "Gitは使えます"
     Write-Host "=============================="
