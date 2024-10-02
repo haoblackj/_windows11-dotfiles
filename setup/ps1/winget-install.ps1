@@ -1,3 +1,4 @@
+winget upgrade Microsoft.AppInstaller
 New-Item -Path $env:USERPROFILE\.configuration -ItemType Directory
 Invoke-WebRequest https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\configuration.dsc.yaml
 Invoke-WebRequest https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/home-configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\home-configuration.dsc.yaml
@@ -13,3 +14,5 @@ if ($homeMachine -ieq "Yes" -or $homeMachine -ieq "y") {
         winget configure $env:USERPROFILE\.configuration\home-desktop-configuration.dsc.yaml
     }
 }
+# 上記If文が正常に終了したら、フラグファイルを書き出す
+New-Item -Path $env:USERPROFILE\.configuration\winget-install.done -ItemType File
