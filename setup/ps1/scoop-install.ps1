@@ -1,7 +1,8 @@
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-irm get.scoop.sh -outfile 'scoop-install.ps1'
+iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
+# irm get.scoop.sh -outfile 'scoop-install.ps1'
 
-.\scoop-install.ps1
+# .\scoop-install.ps1
 
 scoop install git aria2 7zip
 
