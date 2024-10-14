@@ -91,6 +91,6 @@ Install-Module PPoshTools -Force -Scope CurrentUser
 # フォントをインストールする
 Add-Font -Path C:\WorkTmp\fonts
 
-if ($homeMachine -eq "Yes") {
-    Add-Font -Path C:\WorkTmp\fonts\home
-}
+# if ($homeMachine -eq "Yes") {
+#     Add-Font -Path C:\WorkTmp\fonts\home
+# }
