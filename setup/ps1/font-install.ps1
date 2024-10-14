@@ -23,6 +23,15 @@ function DownloadLatestReleaseZip {
 # カレントディレクトリを取得します
 $currentDir = Get-Location
 
+# 自宅用PCかどうかを質問し、結果がYesもしくはyes、y、Yの場合はYesとします
+$homeMachine = Read-Host "Is this your home machine? (Yes/No)"
+if ($homeMachine -eq "Yes" -or $homeMachine -eq "yes" -or $homeMachine -eq "y" -or $homeMachine -eq "Y") {
+    $homeMachine = "Yes"
+} else {
+    $homeMachine = "No"
+}
+
+
 # カレントディレクトリが 'C:\WorkTmp' でなければ、それに変更します
 if ($currentDir -ne 'C:\WorkTmp') {
     Set-Location -Path 'C:\WorkTmp'
