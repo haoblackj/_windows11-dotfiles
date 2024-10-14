@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm'
 
-local config = {}
+local config = wezterm.config_builder()
+config.automatically_reload_config = true
 
 front_end = "OpenGL"
 
@@ -34,6 +35,9 @@ config.font = wezterm.font("Firge35Nerd Console", {weight="Medium", stretch="Nor
 
 -- フォントサイズの設定
 config.font_size = 16
+
+-- IMEから入力できるようにする設定
+config.use_ime = true
 
 -- WSL起動設定
 config.default_prog = {
@@ -97,42 +101,68 @@ config.skip_close_confirmation_for_processes_named = {
   'powershell.exe',
 }
 
-
-config.window_frame = {
-  -- The font used in the tab bar.
-  -- Roboto Bold is the default; this font is bundled
-  -- with wezterm.
-  -- Whatever font is selected here, it will have the
-  -- main font setting appended to it to pick up any
-  -- fallback fonts you may have used there.
-
-  -- The size of the font in the tab bar.
-  -- Default to 10.0 on Windows but 12.0 on other systems
-  font_size = 9.0,
-
-  -- The overall background color of the tab bar when
-  -- the window is focused
-  active_titlebar_bg = '#333333',
-
-  -- The overall background color of the tab bar when
-  -- the window is not focused
-  inactive_titlebar_bg = '#333333',
-}
+-- タブの設定
 
 config.colors = {
   tab_bar = {
     -- The color of the inactive tab bar edge/divider
-    inactive_tab_edge = '#575757',
+    -- inactive_tab_edge = '#575757',
+    inactive_tab_edge = 'none',
   },
 }
-
 
 config.window_close_confirmation = 'NeverPrompt'
 
 config.window_decorations="INTEGRATED_BUTTONS|RESIZE"
 
+-- config.hide_tab_bar_if_only_one_tab = true
+
+config.window_frame = {
+  inactive_titlebar_bg = "none",
+  active_titlebar_bg = "none",
+  font_size = 9.0,
+}
+
+ config.window_background_gradient = {
+  colors = { "#000000" },
+}
+
+-- config.show_new_tab_button_in_tab_bar = false
+-- config.show_close_tab_button_in_tabs = false
+
+local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
+local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
+
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+  local background = "#5c6d74"
+  local foreground = "#FFFFFF"
+  local edge_background = "none"
+
+  if tab.is_active then
+    background = "#ae8b2d"
+    foreground = "#FFFFFF"
+  end
+  local edge_foreground = background
+  local title = "   " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
+
+  return {
+    { Background = { Color = edge_background } },
+    { Foreground = { Color = edge_foreground } },
+    { Text = SOLID_LEFT_ARROW },
+    { Background = { Color = background } },
+    { Foreground = { Color = foreground } },
+    { Text = title },
+    { Background = { Color = edge_background } },
+    { Foreground = { Color = edge_foreground } },
+    { Text = SOLID_RIGHT_ARROW },
+  }
+end)
+
+
+
 -- 背景の設定
 config.window_background_opacity = 0.5
+-- config.win32_system_backdrop = 'Tabbed'
 
 -- config.window_background_image = "C:\\WorkTmp\\mMeyexn.jpeg"
 -- config.window_background_image_hsb = {
@@ -146,5 +176,9 @@ config.window_background_opacity = 0.5
 --   -- 1.0で元画像から変更なし
 --   saturation = 1.0,
 -- }
+
+-- キーバインドの設定
+config.keys = require("keybinds").keys
+config.key_tables = require("keybinds").key_tables
 
 return config
