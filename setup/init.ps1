@@ -90,25 +90,25 @@ else {
 }
 
 # .gitconfigの配置が終わっているか確認する
-if (Test-Path "$env:USERPROFILE\.gitconfig" -PathType Leaf) {
-    Write-Host "=============================="
-    Write-Host "gitconfigの配置は完了しています"
-    Write-Host "=============================="
-}
-else {
-    Write-Host "=============================="
-    #.gitconfigの配置
-    Write-Host "gitconfigのダウンロードとユーザプロファイルへの配置"
-    wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.gitconfig" -OutFile "$env:USERPROFILE\.gitconfig"
-    # .gitconfigの配置が終わったか確認する
-    if (Test-Path "$env:USERPROFILE\.gitconfig") {
-        Write-Host "gitconfigの配置が完了しました"
-    }
-    else {
-        Write-Host "gitconfigの配置が失敗しました"
-    }
-    Write-Host "=============================="
-}
+# if (Test-Path "$env:USERPROFILE\.gitconfig" -PathType Leaf) {
+#     Write-Host "=============================="
+#     Write-Host "gitconfigの配置は完了しています"
+#     Write-Host "=============================="
+# }
+# else {
+#     Write-Host "=============================="
+#     #.gitconfigの配置
+#     Write-Host "gitconfigのダウンロードとユーザプロファイルへの配置"
+#     wget "https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.gitconfig" -OutFile "$env:USERPROFILE\.gitconfig"
+#     # .gitconfigの配置が終わったか確認する
+#     if (Test-Path "$env:USERPROFILE\.gitconfig") {
+#         Write-Host "gitconfigの配置が完了しました"
+#     }
+#     else {
+#         Write-Host "gitconfigの配置が失敗しました"
+#     }
+#     Write-Host "=============================="
+# }
 
 # Microsoft Teamsがアンインストールされているか確認する
 $teams = Get-AppxPackage -Name MicrosoftTeams
