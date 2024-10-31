@@ -29,4 +29,9 @@ scoop bucket add extras
 scoop bucket add versions
 scoop bucket add nerd-fonts
 
+git config --global --add safe.directory $env:USERPROFILE\scoop\bucket\main
+git config --global --add safe.directory $env:USERPROFILE\scoop\bucket\extras
+git config --global --add safe.directory $env:USERPROFILE\scoop\bucket\versions
+git config --global --add safe.directory $env:USERPROFILE\scoop\bucket\nerd-fonts
+
 scoop install sumatrapdf everything powertoys autohotkey1.1 vscode wezterm teraterm main/gh bitwarden slack honeyview
