@@ -17,14 +17,6 @@ properties:
         id: Google.JapaneseIME
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: WindowsADK
-      directives:
-        description: Install Windows ADK
-        allowPrerelease: true
-      settings:
-        id: Microsoft.WindowsADK
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: PowerShell
       directives:
         description: Install PowerShell
@@ -41,14 +33,6 @@ properties:
         id: Biscuit.Biscuit
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: WingetUIStore
-      directives:
-        description: Install WingetUIStore
-        allowPrerelease: true
-      settings:
-        id: SomePythonThings.WingetUIStore
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: GoogleChrome
       directives:
         description: Install Google Chrome
@@ -63,5 +47,30 @@ properties:
         allowPrerelease: true
       settings:
         id: Mozilla.Firefox
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: PowerToys
+      directives:
+        description: Install PowerToys
+        allowPrerelease: true
+      settings:
+        id: Microsoft.Powertoys
+        source: winget
+        scope: machine
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: bitwarden
+      directives:
+        description: Install Bitwarden
+        allowPrerelease: false
+      settings:
+        id: 8bitSolutionsLLC.Bitwarden
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Honeyview
+      directives:
+        description: Install Honeyview
+        allowPrerelease: false
+      settings:
+        id: Bandisoft.Honeyview
         source: winget
   configurationVersion: 0.2.0
