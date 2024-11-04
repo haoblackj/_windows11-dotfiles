@@ -3,10 +3,10 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 config.automatically_reload_config = true
 
-front_end = "OpenGL"
+front_end = "WebGPU"
 
 -- カラースキームの設定
-config.color_scheme = 'Tokyo Night Storm (Gogh)'
+config.color_scheme = 'Horizon Dark (base16)'
 
 -- ショートカットキー設定
 config.keys = {
