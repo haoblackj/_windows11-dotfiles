@@ -161,7 +161,7 @@ end)
 
 
 -- 背景の設定
-config.window_background_opacity = 0.5
+config.window_background_opacity = 0.8
 -- config.win32_system_backdrop = 'Tabbed'
 
 -- config.window_background_image = "C:\\WorkTmp\\mMeyexn.jpeg"
