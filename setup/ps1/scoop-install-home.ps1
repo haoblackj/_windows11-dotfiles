@@ -1,1 +1,1 @@
-scoop install discord qbittorrent audacity vlc
+scoop install qbittorrent audacity vlc
