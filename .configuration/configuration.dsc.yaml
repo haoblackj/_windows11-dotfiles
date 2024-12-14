@@ -73,4 +73,28 @@ properties:
       settings:
         id: Bandisoft.Honeyview
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Everything
+      directives:
+        description: Install Everything
+        allowPrerelease: false
+      settings:
+        id: voidtools.Everything
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: sumatrapdf
+      directives:
+        description: Install SumatraPDF
+        allowPrerelease: false
+      settings:
+        id: SumatraPDF.SumatraPDF
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: teraterm
+      directives:
+        description: Install Tera Term
+        allowPrerelease: false
+      settings:
+        id: TeraTermProject.teraterm5
+        source: winget
   configurationVersion: 0.2.0
