@@ -220,9 +220,6 @@ else {
 }
 
 # Gitが使えるか確認する
-# Gitが使える場合は、下記ふたつのリポジトリをクローンする
-# 1. spzenhan.vim
-# 2. _windows11-dotfiles
 # 使えない場合はエラーメッセージを表示する
 # scoopでインストールしたGitを使う
 if (Test-Path "C:\Users\$env:USERNAME\scoop\apps\git\current\mingw64\bin\git.exe" -PathType Leaf) {
@@ -236,33 +233,30 @@ if (Test-Path "C:\Users\$env:USERNAME\scoop\apps\git\current\mingw64\bin\git.exe
     $credentialHelper = "c:\Users\$username\scoop\apps\git\current\mingw64\bin\git-credential-manager.exe"
 
     git config --global credential.helper $credentialHelper
+    git config --system filter.lfs.clean "git-lfs clean -- %f"
+    git config --system filter.lfs.smudge "git-lfs smudge -- %f"
+    git config --system filter.lfs.process "git-lfs filter-process"
+    git config --system filter.lfs.required true
 
-    Write-Host "=============================="
-    Write-Host "リポジトリをクローンします"
-    Write-Host "=============================="
-    git clone https://github.com/kaz399/spzenhan.vim.git C:\WorkTmp\spzenhan.vim
-    git clone https://github.com/haoblackj/_windows11-dotfiles.git C:\WorkTmp\_windows11-dotfiles
-    Write-Host "=============================="
+    git config --system user.name "haoblackj"
+    git config --system user.email "17177994+haoblackj@users.noreply.github.com"
+
+    git config --system core.autocrlf false
+    git config --system core.quotepath false
+
+    git config --system alias.cob "checkout -b"
+    git config --system alias.co "checkout"
+
+    git config --system ghq.root "~/repo"
+
+    git config --system credential.helperselector.selected manager
+    git config --system credential.helper manager
+
 }
 else {
     Write-Host "=============================="
     Write-Host "Gitが使えません"
     Write-Host "=============================="
-}
-
-# WezTermの設定を行う
-# WezTermの設定が完了しているか確認する
-# WezTermの設定が完了していない場合は、WezTerm設定スクリプトを実行する
-if (Test-Path "$env:USERPROFILE\.wezterm.lua" -PathType Leaf) {
-    Write-Host "=============================="
-    Write-Host "WezTermの設定は完了しています"
-    Write-Host "=============================="
-}
-else {
-    Write-Host "=============================="
-    Write-Host "WezTerm設定スクリプトを実行します"
-    Write-Host "=============================="
-    Start-Process C:\WorkTmp\_windows11-dotfiles\WezTerm_Deploy.bat -Verb RunAs
 }
 
 # フォントのインストールを行う
@@ -303,6 +297,8 @@ else {
     gh auth login -w
     Set-Location C:\WorkTmp
     gh repo clone haoblackj/AutoHotkey
+    gh repo clone haoblackj/_windows11-dotfiles
+    gh repo clone haoblackj/dotfiles
 }
 
 # init.ps1他、作成したフラグファイル、ショートカットを削除する
