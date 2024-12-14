@@ -34,4 +34,4 @@ git config --global --add safe.directory $env:USERPROFILE\scoop\bucket\extras
 git config --global --add safe.directory $env:USERPROFILE\scoop\bucket\versions
 git config --global --add safe.directory $env:USERPROFILE\scoop\bucket\nerd-fonts
 
-scoop install sumatrapdf everything autohotkey1.1 vscode wezterm teraterm main/gh ffmpeg
+scoop install autohotkey1.1 vscode wezterm main/gh ffmpeg
