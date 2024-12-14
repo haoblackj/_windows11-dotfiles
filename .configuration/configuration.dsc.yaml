@@ -97,4 +97,4 @@ properties:
       settings:
         id: TeraTermProject.teraterm5
         source: winget
-configurationVersion: 0.2.0
+  configurationVersion: 0.2.0
