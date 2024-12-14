@@ -233,25 +233,6 @@ if (Test-Path "C:\Users\$env:USERNAME\scoop\apps\git\current\mingw64\bin\git.exe
     $credentialHelper = "c:\Users\$username\scoop\apps\git\current\mingw64\bin\git-credential-manager.exe"
 
     git config --global credential.helper $credentialHelper
-    git config --system filter.lfs.clean "git-lfs clean -- %f"
-    git config --system filter.lfs.smudge "git-lfs smudge -- %f"
-    git config --system filter.lfs.process "git-lfs filter-process"
-    git config --system filter.lfs.required true
-
-    git config --system user.name "haoblackj"
-    git config --system user.email "17177994+haoblackj@users.noreply.github.com"
-
-    git config --system core.autocrlf false
-    git config --system core.quotepath false
-
-    git config --system alias.cob "checkout -b"
-    git config --system alias.co "checkout"
-
-    git config --system ghq.root "~/repo"
-
-    git config --system credential.helperselector.selected manager
-    git config --system credential.helper manager
-
 }
 else {
     Write-Host "=============================="
