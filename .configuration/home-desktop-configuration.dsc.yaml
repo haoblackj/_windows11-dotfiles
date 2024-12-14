@@ -9,14 +9,6 @@ properties:
         MinVersion: '10.0.22000'
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: GeForceExperience
-      directives:
-        description: Install GeForce Experience
-        allowPrerelease: true
-      settings:
-        id: NVIDIA.GeForceExperience
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: LinkShellExtension
       directives:
         description: Install Link Shell Extension
