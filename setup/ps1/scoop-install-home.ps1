@@ -1,1 +1,1 @@
-scoop install qbittorrent audacity vlc
+scoop install audacity vlc neeview
