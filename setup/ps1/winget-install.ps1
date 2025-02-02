@@ -1,8 +1,8 @@
 winget upgrade Microsoft.AppInstaller
-New-Item -Path $env:USERPROFILE\.configuration -ItemType Directory
-Invoke-WebRequest https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\configuration.dsc.yaml
-Invoke-WebRequest https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/home-configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\home-configuration.dsc.yaml
-Invoke-WebRequest https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/home-desktop-configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\home-desktop-configuration.dsc.yaml
+# New-Item -Path $env:USERPROFILE\.configuration -ItemType Directory
+# Invoke-WebRequest https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\configuration.dsc.yaml
+# Invoke-WebRequest https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/home-configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\home-configuration.dsc.yaml
+# Invoke-WebRequest https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/home-desktop-configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\home-desktop-configuration.dsc.yaml
 # winget configure $env:USERPROFILE\.configuration\configuration.dsc.yaml
 winget install Google.JapaneseIME
 winget install Microsoft.PowerShell
@@ -14,7 +14,7 @@ winget install 8bitSolutionsLLC.Bitwarden
 winget install Bandisoft.Honeyview
 winget install voidtools.Everything
 winget install SumatraPDF.SumatraPDF
-winget install TeraTermProject.teraterm5
+winget install OliverSchwendener.ueli
 # 自宅用PCかどうか、Yes/Noで質問する。Yesならば、home-configuration.dsc.yamlを適用する。
 $homeMachine = Read-Host "Is this home PC? (Yes/No)"
 if ($homeMachine -ieq "Yes" -or $homeMachine -ieq "y") {
@@ -26,6 +26,7 @@ if ($homeMachine -ieq "Yes" -or $homeMachine -ieq "y") {
     if ($desktopMachine -ieq "Yes" -or $desktopMachine -ieq "y") {
         # winget configure $env:USERPROFILE\.configuration\home-desktop-configuration.dsc.yaml
         winget install HermannSchinagl.LinkShellExtension
+        winget install qBittorrent.qBittorrent
     }
 }
 # 上記If文が正常に終了したら、フラグファイルを書き出す
