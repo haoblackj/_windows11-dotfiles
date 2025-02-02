@@ -18,18 +18,18 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/ps1/scoop-home-install.ps1'))
 ```
 
-5. 管理者権限でPowerShellを起動し実行。(フォントの設定が実行される)
-```
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/ps1/font-install.ps1'))
-```
-
-6. 一般権限でPowerShellを起動し実行。(GitHub CLIの設定が実行される)
+5. 一般権限でPowerShellを起動し実行。(GitHub CLIの設定が実行される)
 ```
 gh auth login -w
 Set-Location C:\WorkTmp
 gh repo clone haoblackj/AutoHotkey
 gh repo clone haoblackj/_windows11-dotfiles
 gh repo clone haoblackj/dotfiles
+```
+
+6. 管理者権限でPowerShellを起動し実行。(フォントの設定が実行される)
+```
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/setup/ps1/font-install.ps1'))
 ```
 
 7. 一般権限でPowerShellを起動し実行。(chezmoiの設定が実行される)
