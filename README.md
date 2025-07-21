@@ -11,7 +11,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 ```
 3. 一般権限でPowerShellを起動し実行。(scoopがインストールされる)
 ```
-irm get.scoop.sh | iex
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 ```
 
 4. 一般権限でPowerShellを起動し実行。(scoopでインストールが実行される)
