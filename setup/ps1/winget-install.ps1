@@ -4,6 +4,7 @@ winget upgrade Microsoft.AppInstaller
 # Invoke-WebRequest https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/home-configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\home-configuration.dsc.yaml
 # Invoke-WebRequest https://raw.githubusercontent.com/haoblackj/_windows11-dotfiles/master/.configuration/home-desktop-configuration.dsc.yaml -OutFile $env:USERPROFILE\.configuration\home-desktop-configuration.dsc.yaml
 # winget configure $env:USERPROFILE\.configuration\configuration.dsc.yaml
+pause
 winget install Google.JapaneseIME
 winget install Microsoft.PowerShell
 winget install Biscuit.Biscuit
@@ -31,4 +32,4 @@ if ($homeMachine -ieq "Yes" -or $homeMachine -ieq "y") {
     }
 }
 # 上記If文が正常に終了したら、フラグファイルを書き出す
-New-Item -Path $env:USERPROFILE\.configuration\winget-install.done -ItemType File
+# New-Item -Path $env:USERPROFILE\.configuration\winget-install.done -ItemType File
