@@ -21,6 +21,7 @@ $homeMachine = Read-Host "Is this home PC? (Yes/No)"
 if ($homeMachine -ieq "Yes" -or $homeMachine -ieq "y") {
     # winget configure $env:USERPROFILE\.configuration\home-configuration.dsc.yaml
     winget install AdGuard.AdGuard
+    winget install neelabo.NeeView
     # winget install CubeSoft.CubePDF
     # デスクトップPCかどうか、Yes/Noで質問する。Yesならば、home-desktop-configuration.dsc.yamlを適用する。
     $desktopMachine = Read-Host "Is this home desktop PC? (Yes/No)"
@@ -28,7 +29,7 @@ if ($homeMachine -ieq "Yes" -or $homeMachine -ieq "y") {
         # winget configure $env:USERPROFILE\.configuration\home-desktop-configuration.dsc.yaml
         winget install HermannSchinagl.LinkShellExtension
         winget install qBittorrent.qBittorrent
-        winget install clawSoft.clawPDF
+        # winget install clawSoft.clawPDF
     }
 }
 # 上記If文が正常に終了したら、フラグファイルを書き出す
