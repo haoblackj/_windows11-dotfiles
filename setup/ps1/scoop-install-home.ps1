@@ -1,1 +1,1 @@
-scoop install audacity vlc neeview
+scoop install audacity vlc
