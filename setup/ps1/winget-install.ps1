@@ -16,21 +16,22 @@ winget install Bandisoft.Honeyview
 winget install voidtools.Everything
 winget install SumatraPDF.SumatraPDF
 # winget install OliverSchwendener.ueli
-# ©‘î—pPC‚©‚Ç‚¤‚©AYes/No‚Å¿–â‚·‚éBYes‚È‚ç‚ÎAhome-configuration.dsc.yaml‚ğ“K—p‚·‚éB
+# è‡ªå®…ç”¨PCã‹ã©ã†ã‹ã€Yes/Noã§è³ªå•ã™ã‚‹ã€‚Yesãªã‚‰ã°ã€home-configuration.dsc.yamlã‚’é©ç”¨ã™ã‚‹ã€‚
 $homeMachine = Read-Host "Is this home PC? (Yes/No)"
 if ($homeMachine -ieq "Yes" -or $homeMachine -ieq "y") {
     # winget configure $env:USERPROFILE\.configuration\home-configuration.dsc.yaml
     winget install AdGuard.AdGuard
     winget install neelabo.NeeView
     # winget install CubeSoft.CubePDF
-    # ƒfƒXƒNƒgƒbƒvPC‚©‚Ç‚¤‚©AYes/No‚Å¿–â‚·‚éBYes‚È‚ç‚ÎAhome-desktop-configuration.dsc.yaml‚ğ“K—p‚·‚éB
+    # ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—PCã‹ã©ã†ã‹ã€Yes/Noã§è³ªå•ã™ã‚‹ã€‚Yesãªã‚‰ã°ã€home-desktop-configuration.dsc.yamlã‚’é©ç”¨ã™ã‚‹ã€‚
     $desktopMachine = Read-Host "Is this home desktop PC? (Yes/No)"
     if ($desktopMachine -ieq "Yes" -or $desktopMachine -ieq "y") {
         # winget configure $env:USERPROFILE\.configuration\home-desktop-configuration.dsc.yaml
-        winget install HermannSchinagl.LinkShellExtension
+        # winget install HermannSchinagl.LinkShellExtension
         winget install qBittorrent.qBittorrent
         # winget install clawSoft.clawPDF
     }
 }
-# ã‹LIf•¶‚ª³í‚ÉI—¹‚µ‚½‚çAƒtƒ‰ƒOƒtƒ@ƒCƒ‹‚ğ‘‚«o‚·
+# ä¸Šè¨˜Ifæ–‡ãŒæ­£å¸¸ã«çµ‚äº†ã—ãŸã‚‰ã€ãƒ•ãƒ©ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ›¸ãå‡ºã™
+
 # New-Item -Path $env:USERPROFILE\.configuration\winget-install.done -ItemType File
