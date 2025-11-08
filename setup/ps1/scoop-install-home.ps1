@@ -1,1 +1,1 @@
-scoop install audacity vlc slack
+scoop install audacity slack
