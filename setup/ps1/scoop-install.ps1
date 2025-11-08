@@ -21,6 +21,6 @@ git config --system credential.helper manager
 
 scoop bucket add extras
 scoop bucket add versions
-scoop bucket add nerd-fonts
 
-scoop install autohotkey1.1 vscode wezterm main/gh ffmpeg chezmoi komorebi whkd
+scoop install autohotkey1.1 vscode wezterm main/gh ffmpeg chezmoi komorebi whkd yasb
+
