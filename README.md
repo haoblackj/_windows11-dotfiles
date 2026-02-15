@@ -1,4 +1,7 @@
 # Setup
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/haoblackj/_windows11-dotfiles)
+
 ## Windows編
 1. 管理者権限でPowerShellを起動し実行。(WSLのインストールが実行される)
 ```
