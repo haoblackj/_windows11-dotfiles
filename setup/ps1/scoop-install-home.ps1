@@ -1,1 +1,1 @@
-scoop install audacity slack
+scoop install audacity slack discord
